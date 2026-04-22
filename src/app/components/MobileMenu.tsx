@@ -30,15 +30,15 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <>
       {/* Backdrop with fade animation */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/40 z-40 lg:hidden animate-in fade-in duration-300"
-          onClick={onClose}
-          style={{
-            animation: isOpen ? 'fadeIn 0.3s ease-out forwards' : 'fadeOut 0.3s ease-in forwards'
-          }}
-        />
-      )}
+       {isOpen && (
+         <div
+           className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden animate-in fade-in duration-300"
+           onClick={onClose}
+           style={{
+             animation: isOpen ? 'fadeIn 0.3s ease-out forwards' : 'fadeOut 0.3s ease-in forwards'
+           }}
+         />
+       )}
 
       {/* Menu Drawer with smooth pull-up animation (slow to fast) */}
       <div
