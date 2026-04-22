@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useNavigate } from "react-router";
 import { Header } from "../components/Header";
@@ -179,6 +179,11 @@ export default function LandingPage() {
   const [searchText, setSearchText] = useState("");
   const [searchFilter, setSearchFilter] = useState("Stock Code");
   const [openFaq, setOpenFaq] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
   const handleSearch = () => {
     const query = searchText.trim() || "HSBC";
