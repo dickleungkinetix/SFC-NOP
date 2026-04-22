@@ -65,17 +65,17 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <div className="px-4 pt-4">
           <button 
             onClick={() => setExpandedItem(expandedItem === "Stock Trading Analysis System" ? null : "Stock Trading Analysis System")}
-            className="w-full flex items-center justify-between bg-gray-50 rounded-xl px-3 py-3 mb-4 hover:bg-gray-100 transition-colors"
+            className="w-full flex items-center justify-between bg-[#008581] rounded-xl px-3 py-3 mb-4 hover:bg-[#006b6a] transition-colors shadow-lg"
           >
             <div className="flex items-center gap-3 text-left">
-              <div className="w-10 h-10 rounded-xl bg-[#008581] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
                 <BarChart2 className="w-5 h-5 text-white" />
               </div>
-              <span className="font-semibold text-sm text-gray-900 leading-tight">
+              <span className="font-semibold text-sm text-white leading-tight">
                 Stock Trading<br />Analysis System
               </span>
             </div>
-            <ChevronRight className={`w-4 h-4 text-gray-400 shrink-0 transition-transform duration-300 ${expandedItem === "Stock Trading Analysis System" ? "rotate-90" : ""}`} />
+            <ChevronRight className={`w-4 h-4 text-white shrink-0 transition-transform duration-300 ${expandedItem === "Stock Trading Analysis System" ? "rotate-90" : ""}`} />
           </button>
 
           {/* Expanded submenu with animation */}
