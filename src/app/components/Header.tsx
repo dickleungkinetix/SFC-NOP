@@ -163,7 +163,7 @@ export function Header({
                             <path d="M3 3v18h18" /><path d="m19 9-5 5-4-4-3 3" />
                           </svg>
                         </div>
-                        <span className="text-xl font-bold text-gray-900">{item.label}</span>
+                         <span className={`text-xl ${openNavItem === item.label ? 'font-black' : 'font-bold'} text-gray-900`}>{item.label}</span>
                       </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-x-8 gap-y-10 text-left">
