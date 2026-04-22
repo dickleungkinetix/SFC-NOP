@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { X, ChevronRight, BarChart2, Users, Building2, Landmark, FileText, LayoutGrid } from "lucide-react";
 import { SFCLogo } from "./SFCLogo";
 
@@ -24,6 +25,8 @@ const ccassLinks = [
 ];
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+  const [expandedItem, setExpandedItem] = useState<string | null>("Stock Trading Analysis System");
+
   return (
     <>
       {/* Backdrop with fade animation */}
@@ -60,31 +63,36 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
         {/* Active: Stock Trading Analysis System */}
         <div className="px-4 pt-4">
-          <div className="flex items-center justify-between bg-gray-50 rounded-xl px-3 py-3 mb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#008581] flex items-center justify-center">
+          <button 
+            onClick={() => setExpandedItem(expandedItem === "Stock Trading Analysis System" ? null : "Stock Trading Analysis System")}
+            className="w-full flex items-center justify-between bg-gray-50 rounded-xl px-3 py-3 mb-4 hover:bg-gray-100 transition-colors"
+          >
+            <div className="flex items-center gap-3 text-left">
+              <div className="w-10 h-10 rounded-xl bg-[#008581] flex items-center justify-center shrink-0">
                 <BarChart2 className="w-5 h-5 text-white" />
               </div>
               <span className="font-semibold text-sm text-gray-900 leading-tight">
                 Stock Trading<br />Analysis System
               </span>
             </div>
-            <ChevronRight className="w-4 h-4 text-gray-400" />
-          </div>
+            <ChevronRight className={`w-4 h-4 text-gray-400 shrink-0 transition-transform duration-300 ${expandedItem === "Stock Trading Analysis System" ? "rotate-90" : ""}`} />
+          </button>
 
-          {/* Expanded submenu */}
-          <div className="border-t-2 border-[#008581] pt-3 mb-4">
-            <p className="font-semibold text-[#008581] text-sm mb-3">Stock Trading Analysis System</p>
-            <ul className="space-y-2">
-              {ccassLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-[#1a56b0] underline text-sm hover:text-[#008581]">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Expanded submenu with animation */}
+          {expandedItem === "Stock Trading Analysis System" && (
+            <div className="border-t-2 border-[#008581] pt-3 mb-4 animate-in fade-in slide-in-from-top-2 duration-300">
+              <p className="font-semibold text-[#008581] text-sm mb-3">Stock Trading Analysis System</p>
+              <ul className="space-y-2">
+                {ccassLinks.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-[#1a56b0] underline text-sm hover:text-[#008581]">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Other nav items */}
