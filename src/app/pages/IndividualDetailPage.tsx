@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronRight, ChevronDown, X, User } from "lucide-react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import imgHero from "figma:asset/4095f7088a770ad2fc6a4abd1dbaf4eb80413283.png";
 
 // ──────────────── SIDEBAR TREE ────────────────
 
@@ -40,8 +41,16 @@ export default function IndividualDetailPage() {
         onSearchChange={setSearchText}
       />
 
-      {/* Main layout */}
+      {/* Main layout with background image underneath */}
       <div className="relative flex-1">
+        {/* Background image — 444px tall, sits behind main content */}
+        <img
+          src={imgHero}
+          alt=""
+          className="absolute inset-x-0 top-0 w-full h-[444px] object-cover object-center opacity-80"
+        />
+        <div className="absolute inset-x-0 top-0 h-[444px] bg-gradient-to-b from-blue-800/30 to-gray-800/30" />
+
       <div className="relative max-w-7xl mx-auto w-full px-2 sm:px-4 lg:px-6 py-4 lg:py-6">
         <div className="flex gap-4 lg:gap-6 relative">
 
