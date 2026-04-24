@@ -157,7 +157,11 @@ export function Header({
               <div key={item.label}>
                 <button
                   onClick={() => setOpenNavItem(openNavItem === item.label ? null : item.label)}
-                  className="relative text-sm text-gray-800 hover:text-gray-600 px-3 py-3 whitespace-nowrap shrink-0 block w-full text-left"
+                  className={`relative text-sm px-3 py-3 whitespace-nowrap shrink-0 block w-full text-left ${
+                    openNavItem === item.label 
+                      ? "font-bold text-[#008783]" 
+                      : "text-gray-800 hover:text-gray-600"
+                  }`}
                 >
                   {item.label}
                   <span

@@ -374,7 +374,7 @@ export default function LandingPage() {
         </div>
 
         {/* Radio filters */}
-        <div className="bg-white rounded-full px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 shadow-sm w-full max-w-[95%] sm:max-w-[85%] lg:w-[30%]">
+        <div className="bg-white rounded-full px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 shadow-sm w-full max-w-[95%] sm:max-w-[85%] lg:w-[35%]">
           {["Stock Code", "Individuals", "Corporations", "Licensee"].map((opt) => (
             <RadioOption
               key={opt}
