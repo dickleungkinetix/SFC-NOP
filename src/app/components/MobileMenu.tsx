@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X, ChevronRight, BarChart2, Users, Building2, Landmark, FileText, LayoutGrid } from "lucide-react";
 import { SFCLogo } from "./SFCLogo";
+import chartImage from "../../assets/chart_image.png";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -114,17 +115,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
         {/* Bottom decorative */}
         <div className="p-4 bg-gradient-to-t from-gray-50">
-          <div className="h-24 rounded-xl bg-gradient-to-br from-[#008581]/10 to-[#0c6fae]/10 flex items-end justify-center pb-2">
-            <div className="flex gap-1 items-end">
-              {[4, 7, 5, 9, 6, 8, 4, 7].map((h, i) => (
-                <div key={i} className="flex flex-col items-center gap-0.5">
-                  <div
-                    style={{ height: h * 5 }}
-                    className={`w-3 rounded-sm ${i % 2 === 0 ? "bg-red-400" : "bg-green-500"}`}
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="chart-float-wrapper">
+            <div className="chart-float-right" />
           </div>
         </div>
       </div>

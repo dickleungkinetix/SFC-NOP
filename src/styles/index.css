@@ -5,3 +5,15 @@
 .z-30 {
     z-index: 51;
 }
+
+.chart-float-wrapper {
+}
+
+.chart-float-right {
+    float: right;
+    width: 161px;
+    height: 323px;
+    background-image: url('../assets/chart_image.png');
+    background-repeat: no-repeat;
+    background-position-x: 29px;
+}
