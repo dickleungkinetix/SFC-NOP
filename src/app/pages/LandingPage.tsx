@@ -8,7 +8,7 @@ import imgHero1 from "figma:asset/855b1c6163e833e64d0daf6309750bee98af2afd.png";
 import imgHero2 from "figma:asset/4095f7088a770ad2fc6a4abd1dbaf4eb80413283.png";
 
 const heroImages = [imgHero1, imgHero2];
-const SLIDE_INTERVAL = 2000;
+const SLIDE_INTERVAL = 5000;
 
 // ──────────────── HERO CAROUSEL ────────────────
 
@@ -87,8 +87,9 @@ function HeroCarousel() {
           key={i}
           src={src}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out"
+          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity ease-in-out"
           style={{
+            transitionDuration: "2000ms",
             opacity: i === current ? 1 : 0,
             pointerEvents: "none",
           }}
