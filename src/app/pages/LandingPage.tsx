@@ -193,7 +193,7 @@ const cards = [
       "CCASS Investor Participant stakes",
       "CCASS participants and holdings",
     ],
-    href: "/corporation/0001",
+    href: "/chart",
   },
   {
     id: "corporations",
