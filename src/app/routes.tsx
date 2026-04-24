@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import CorporationDetailPage from "./pages/CorporationDetailPage";
 import IndividualDetailPage from "./pages/IndividualDetailPage";
+import ChartPage from "./pages/ChartPage";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "individual/:id",
         Component: IndividualDetailPage,
+      },
+      {
+        path: "chart",
+        Component: ChartPage,
       },
       {
         path: "*",
