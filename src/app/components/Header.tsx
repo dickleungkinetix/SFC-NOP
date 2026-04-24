@@ -18,6 +18,8 @@ interface HeaderProps {
   searchValue?: string;
   onSearchChange?: (v: string) => void;
   onSearchSubmit?: () => void;
+  searchFilter?: string;
+  onSearchFilterChange?: (v: string) => void;
 }
 
 export function Header({
@@ -25,6 +27,8 @@ export function Header({
   searchValue = "",
   onSearchChange,
   onSearchSubmit,
+  searchFilter = "Stock Code",
+  onSearchFilterChange,
 }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openNavItem, setOpenNavItem] = useState<string | null>(null);
@@ -132,17 +136,27 @@ export function Header({
 
         {/* Mobile: search filter row (search results page) */}
         {showSearch && (
-          <div className="lg:hidden flex items-center gap-3 px-4 pb-2.5 overflow-x-auto">
-            {["Stock Code", "Individuals", "Corporations", "Licensee"].map((opt, i) => (
-              <label key={opt} className="flex items-center gap-1.5 cursor-pointer shrink-0">
+          <div className="lg:hidden flex items-center gap-3 px-4 pb-2.5 overflow-x-auto relative z-50">
+            {["Stock Code", "Individuals", "Corporations", "Licensee"].map((opt) => (
+              <label 
+                key={opt} 
+                className="flex items-center gap-1.5 cursor-pointer shrink-0 relative z-50"
+              >
+                <input 
+                  type="radio" 
+                  name="mobile-search-filter" 
+                  className="hidden" 
+                  checked={searchFilter === opt}
+                  onChange={() => onSearchFilterChange && onSearchFilterChange(opt)}
+                />
                 <div
-                  className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                    i === 0 ? "border-[#008581]" : "border-gray-400"
+                  className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors ${
+                    searchFilter === opt ? "border-[#008581]" : "border-gray-400"
                   }`}
                 >
-                  {i === 0 && <div className="w-2 h-2 rounded-full bg-[#008581]" />}
+                  {searchFilter === opt && <div className="w-2 h-2 rounded-full bg-[#008581]" />}
                 </div>
-                <span className={`text-xs ${i === 0 ? "text-gray-900" : "text-gray-500"}`}>
+                <span className={`text-xs transition-colors ${searchFilter === opt ? "text-gray-900 font-medium" : "text-gray-500"}`}>
                   {opt}
                 </span>
               </label>

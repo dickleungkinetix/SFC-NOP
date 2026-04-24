@@ -70,6 +70,8 @@ export default function SearchResultsPage() {
         searchValue={searchText}
         onSearchChange={setSearchText}
         onSearchSubmit={handleSearchSubmit}
+        searchFilter={searchFilter}
+        onSearchFilterChange={setSearchFilter}
       />
 
       {/* Background */}
@@ -94,9 +96,9 @@ export default function SearchResultsPage() {
 
             {/* Content Body */}
             <div className="p-4 lg:p-8 space-y-8">
-              {/* Search by filter - Matching Figma Container3/4/5 */}
-              <div className="bg-[#f9fafb] rounded-[16px] border border-[#f3f4f6] p-5 lg:p-8">
-                <div className="flex flex-col gap-4">
+               {/* Search by filter - Matching Figma Container3/4/5 */}
+               <div className="hidden lg:block bg-[#f9fafb] rounded-[16px] border border-[#f3f4f6] p-5 lg:p-8">
+                 <div className="flex flex-col gap-4">
                   <h3 className="font-bold text-[#1e2939] text-[18px]">Search by</h3>
                   <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
                     {["Stock Code", "Individuals", "Corporations", "Licensee"].map((opt) => (

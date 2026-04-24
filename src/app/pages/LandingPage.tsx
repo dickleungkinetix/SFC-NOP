@@ -248,7 +248,7 @@ const cards = [
       "Latest changes in SFC licensees",
       "Historic total of SFC licensees",
     ],
-    href: "#",
+    href: "/licensee-corp",
   },
 ];
 
@@ -318,7 +318,10 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      <Header />
+      <Header 
+        searchFilter={searchFilter} 
+        onSearchFilterChange={setSearchFilter} 
+      />
 
       {/* ── Hero Section ── */}
       <HeroCarousel />

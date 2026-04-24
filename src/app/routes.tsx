@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import CorporationDetailPage from "./pages/CorporationDetailPage";
 import IndividualDetailPage from "./pages/IndividualDetailPage";
+import LicenseeCorpPage from "./pages/LicenseeCorpPage";
 import ChartPage from "./pages/ChartPage";
 
 export const router = createBrowserRouter([
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: "corporation/:code",
         Component: CorporationDetailPage,
+      },
+      {
+        path: "licensee-corp",
+        Component: LicenseeCorpPage,
       },
       {
         path: "individual/:id",
