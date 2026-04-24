@@ -3,6 +3,7 @@ import { Root } from "./Root";
 import LandingPage from "./pages/LandingPage";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import CorporationDetailPage from "./pages/CorporationDetailPage";
+import IndividualDetailPage from "./pages/IndividualDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "corporation/:code",
         Component: CorporationDetailPage,
+      },
+      {
+        path: "individual/:id",
+        Component: IndividualDetailPage,
       },
       {
         path: "*",
