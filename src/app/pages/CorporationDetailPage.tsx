@@ -292,7 +292,7 @@ export default function CorporationDetailPage() {
 
               {/* Tabs */}
               <div className="flex gap-1 mt-4 mb-5 border-b border-gray-200 overflow-x-auto">
-                {["Ordinary shares : HKD", "Example Others", "Category A", "Category B", "Others"].map((tab, i) => (
+                {["Ordinary shares : HKD", "Warrants 1", "Warrants 2", "Warrants 3", "Others"].map((tab, i) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(i)}
