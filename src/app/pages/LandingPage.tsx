@@ -17,8 +17,10 @@ function HeroCarousel() {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
+  const [parallaxY, setParallaxY] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
 
   const startAutoSlide = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -38,6 +40,23 @@ function HeroCarousel() {
     startAutoSlide();
     return () => stopAutoSlide();
   }, [startAutoSlide, stopAutoSlide]);
+
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        setParallaxY(scrollY * 0.4);
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     stopAutoSlide();
@@ -92,6 +111,8 @@ function HeroCarousel() {
             transitionDuration: "2000ms",
             opacity: i === current ? 1 : 0,
             pointerEvents: "none",
+            transform: `translateY(${parallaxY}px) scale(1.1)`,
+            willChange: "transform",
           }}
         />
       ))}
