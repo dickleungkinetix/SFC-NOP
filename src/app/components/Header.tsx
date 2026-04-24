@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, Search } from "lucide-react";
 import { Link, useNavigate } from "react-router";
 import { SFCLogo } from "./SFCLogo";
@@ -28,7 +28,24 @@ export function Header({
 }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openNavItem, setOpenNavItem] = useState<string | null>(null);
+  const megaMenuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  // Close mega menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (megaMenuRef.current && !megaMenuRef.current.contains(e.target as Node)) {
+        setOpenNavItem(null);
+      }
+    };
+
+    if (openNavItem) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openNavItem]);
 
   const handleSearch = () => {
     if (onSearchSubmit) onSearchSubmit();
@@ -135,7 +152,7 @@ export function Header({
 
         {/* ── Desktop Navigation Bar ── */}
         <nav className="hidden lg:block border-t border-gray-100">
-          <div className="relative flex items-center justify-center px-4 lg:px-8">
+          <div className="relative flex items-center justify-center px-4 lg:px-8" ref={megaMenuRef}>
             {navItems.map((item) => (
               <div key={item.label}>
                 <button
