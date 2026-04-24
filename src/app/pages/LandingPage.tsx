@@ -1,10 +1,110 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useNavigate } from "react-router";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import svgPaths from "../../imports/svg-eeujv9dou2";
-import imgHero from "figma:asset/855b1c6163e833e64d0daf6309750bee98af2afd.png";
+import imgHero1 from "figma:asset/855b1c6163e833e64d0daf6309750bee98af2afd.png";
+import imgHero2 from "figma:asset/4095f7088a770ad2fc6a4abd1dbaf4eb80413283.png";
+
+const heroImages = [imgHero1, imgHero2];
+const SLIDE_INTERVAL = 2000;
+
+// ──────────────── HERO CAROUSEL ────────────────
+
+function HeroCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const startAutoSlide = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, SLIDE_INTERVAL);
+  }, []);
+
+  const stopAutoSlide = useCallback(() => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, [startAutoSlide, stopAutoSlide]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    stopAutoSlide();
+    setIsDragging(true);
+    setDragStart(e.clientX);
+    setDragOffset(0);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    const offset = e.clientX - dragStart;
+    setDragOffset(offset);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    if (dragOffset < -50) {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    } else if (dragOffset > 50) {
+      setCurrent((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+    }
+    setDragOffset(0);
+    startAutoSlide();
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      setDragOffset(0);
+      startAutoSlide();
+    }
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative overflow-hidden select-none"
+      style={{ minHeight: "444px" }}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+    >
+      {heroImages.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out"
+          style={{
+            opacity: i === current ? 1 : 0,
+            pointerEvents: "none",
+          }}
+        />
+      ))}
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,126,206,0.4) 10%, rgba(63,157,226,0) 38%, rgba(29,29,29,0.4) 100%)",
+        }}
+      />
+    </div>
+  );
+}
 
 // ──────────────── ICONS ────────────────
 
@@ -199,83 +299,68 @@ export default function LandingPage() {
       <Header />
 
       {/* ── Hero Section ── */}
-      <div className="relative overflow-hidden" style={{ minHeight: "444px" }}>
-        {/* Background image */}
-        <img
-          src={imgHero}
-          alt="Hong Kong skyline"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0"
+      <HeroCarousel />
+
+      {/* Hero content */}
+      <div className="relative z-10 -mt-[444px] flex flex-col items-center px-4 pt-8 pb-28 sm:pb-32 lg:pt-12 lg:pb-36" style={{ minHeight: "444px" }}>
+        {/* Title */}
+        <h1
+          className="text-white text-center mb-5 lg:mb-7 px-2 max-w-3xl"
           style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,126,206,0.4) 10%, rgba(63,157,226,0) 38%, rgba(29,29,29,0.4) 100%)",
+            fontFamily: "Arial, sans-serif",
+            fontWeight: "bold",
+            fontSize: "clamp(22px, 4vw, 32px)",
+            textShadow: "1px 1px 0 black",
+            lineHeight: 1.35,
           }}
-        />
+        >
+          Hong Kong Listed Companies, New Online Platform
+        </h1>
 
-        {/* Hero content */}
-        <div className="relative z-10 flex flex-col items-center px-4 pt-8 pb-28 sm:pb-32 lg:pt-12 lg:pb-36">
-          {/* Title */}
-          <h1
-            className="text-white text-center mb-5 lg:mb-7 px-2 max-w-3xl"
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontWeight: "bold",
-              fontSize: "clamp(22px, 4vw, 32px)",
-              textShadow: "1px 1px 0 black",
-              lineHeight: 1.35,
-            }}
+        {/* Search bar */}
+        <div
+          className="flex items-center bg-[#fafafa] rounded-full w-full max-w-[95%] sm:max-w-[85%] lg:max-w-[900px] mb-4"
+          style={{
+            border: "2px solid #04ecd3",
+            boxShadow: "0 0 5.4px #17d9d1",
+            height: "56px",
+          }}
+        >
+          <input
+            type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Search Items"
+            className="flex-1 px-5 py-2 bg-transparent outline-none text-gray-500 text-base lg:text-xl"
+          />
+          <button
+            onClick={handleSearch}
+            className="bg-[#128c88] text-white rounded-full flex items-center gap-2 px-4 lg:px-6 py-2 m-1 hover:bg-[#0a7472] transition-colors shrink-0"
           >
-            Hong Kong Listed Companies, New Online Platform
-          </h1>
-
-          {/* Search bar */}
-          <div
-            className="flex items-center bg-[#fafafa] rounded-full w-full max-w-[95%] sm:max-w-[85%] lg:max-w-[900px] mb-4"
-            style={{
-              border: "2px solid #04ecd3",
-              boxShadow: "0 0 5.4px #17d9d1",
-              height: "56px",
-            }}
-          >
-            <input
-              type="text"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Search Items"
-              className="flex-1 px-5 py-2 bg-transparent outline-none text-gray-500 text-base lg:text-xl"
-            />
-            <button
-              onClick={handleSearch}
-              className="bg-[#128c88] text-white rounded-full flex items-center gap-2 px-4 lg:px-6 py-2 m-1 hover:bg-[#0a7472] transition-colors shrink-0"
-            >
-              <svg width="18" height="18" viewBox="0 0 22.6406 22.6406" fill="none">
-                <path
-                  d={svgPaths.pfc4cc00}
-                  stroke="white"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                />
-              </svg>
-              <span className="hidden sm:inline text-sm lg:text-base">Search</span>
-            </button>
-          </div>
-
-           {/* Radio filters */}
-           <div className="bg-white rounded-full px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 shadow-sm w-full max-w-[95%] sm:max-w-[85%] lg:w-[30%]">
-            {["Stock Code", "Individuals", "Corporations", "Licensee"].map((opt) => (
-              <RadioOption
-                key={opt}
-                label={opt}
-                selected={searchFilter === opt}
-                onSelect={() => setSearchFilter(opt)}
+            <svg width="18" height="18" viewBox="0 0 22.6406 22.6406" fill="none">
+              <path
+                d={svgPaths.pfc4cc00}
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
               />
-            ))}
-          </div>
+            </svg>
+            <span className="hidden sm:inline text-sm lg:text-base">Search</span>
+          </button>
+        </div>
+
+        {/* Radio filters */}
+        <div className="bg-white rounded-full px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 shadow-sm w-full max-w-[95%] sm:max-w-[85%] lg:w-[30%]">
+          {["Stock Code", "Individuals", "Corporations", "Licensee"].map((opt) => (
+            <RadioOption
+              key={opt}
+              label={opt}
+              selected={searchFilter === opt}
+              onSelect={() => setSearchFilter(opt)}
+            />
+          ))}
         </div>
       </div>
 
