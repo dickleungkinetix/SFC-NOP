@@ -369,7 +369,7 @@ export function Home() {
           </div>
 
           {/* Right: FAQ Description */}
-          <div className="flex flex-col gap-3">
+          <div className="h-full flex flex-col gap-3">
             <h2 className="text-2xl font-bold text-gray-800">
               Frequently{" "}
               <span className="text-[#009ca6]">Asked Questions</span>
