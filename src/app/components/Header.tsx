@@ -11,6 +11,7 @@ const navItems = [
   { label: "UK Companies House analysis", color: "#d63200" },
   { label: "SFC licensees analysis", color: "#009bff" },
   { label: "Categories", color: "#ffb81d" },
+  { label: "Faq", color: "#9333ea" },
 ];
 
 interface HeaderProps {

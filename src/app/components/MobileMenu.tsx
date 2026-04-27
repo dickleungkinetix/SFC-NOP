@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, ChevronRight, BarChart2, Users, Building2, Landmark, FileText, LayoutGrid } from "lucide-react";
+import { X, ChevronRight, BarChart2, Users, Building2, Landmark, FileText, LayoutGrid, HelpCircle } from "lucide-react";
 import { SFCLogo } from "./SFCLogo";
 import chartImage from "../../assets/chart_image.png";
 
@@ -14,6 +14,7 @@ const navItems = [
   { label: "UK Companies House analysis", icon: <Landmark className="w-5 h-5 text-[#008581]" /> },
   { label: "SFC licensees analysis", icon: <FileText className="w-5 h-5 text-[#008581]" /> },
   { label: "Categories", icon: <LayoutGrid className="w-5 h-5 text-[#008581]" /> },
+  { label: "Faq", icon: <HelpCircle className="w-5 h-5 text-[#008581]" /> },
 ];
 
 const ccassLinks = [
