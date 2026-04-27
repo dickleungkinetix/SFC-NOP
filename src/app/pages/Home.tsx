@@ -378,6 +378,7 @@ export function Home() {
               This FAQ covers using CCASS visualizations to track big-player moves, setting unlimited
               real-time alerts for disclosures and large trades, plus seamless mobile/desktop access.
             </p>
+            <a href="#" className="self-end mt-auto text-sm font-semibold text-[#008581] hover:underline">More...</a>
           </div>
         </div>
       </section>
