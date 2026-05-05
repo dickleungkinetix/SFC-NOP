@@ -6,7 +6,7 @@ import IndividualDetailPage from "./pages/IndividualDetailPage";
 import LicenseeCorpPage from "./pages/LicenseeCorpPage";
 import ChartPage from "./pages/ChartPage";
 import Corporation0001 from "./pages/corporation/0001/index";
-import CCASS from "./pages/CCASS";
+import CCASS from "./pages/ccass-detail";
 
 export const router = createBrowserRouter([
   {
