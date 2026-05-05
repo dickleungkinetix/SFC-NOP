@@ -466,20 +466,21 @@ export default function LandingPage() {
                     {faq.q}
                   </span>
                   <div className="shrink-0 mt-0.5">
-                    {openFaq === i ? (
-                      <ChevronUp className="w-4 h-4 text-gray-400" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4 text-gray-400" />
-                    )}
-                  </div>
-                </button>
-                {i === 2 && <span className="text-sm text-[#008581] font-semibold ml-6 block pt-1">More...</span>}
-                {openFaq === i && (
-                  <p className="text-sm text-gray-600 pb-4 pr-8 leading-relaxed">{faq.a}</p>
+                {openFaq === i ? (
+                  <ChevronUp className="w-4 h-4 text-gray-400" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-gray-400" />
                 )}
               </div>
+            </button>
+            {openFaq === i && (
+              <p className="text-sm text-gray-600 pb-4 pr-8 leading-relaxed">{faq.a}</p>
+            )}
+              </div>
             ))}
+          <span className="text-sm text-[#008581] font-semibold block pt-1">More...</span>
           </div>
+          
         </div>
       </div>
 
