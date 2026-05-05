@@ -382,7 +382,7 @@ export default function LandingPage() {
 
       {/* ── Category Cards — float up over hero ── */}
       <div className="relative z-10 -mt-20 sm:-mt-24 lg:-mt-24 px-3 sm:px-4 lg:px-8 max-w-6xl mx-auto w-full">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-3">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-3">
           {cards.map((card) => (
             <a
               key={card.id}
