@@ -344,11 +344,14 @@ export default function ChartPage() {
               <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
                 <span className="text-sm">Financials</span>
               </div>
-              <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
-                <span className="text-sm">Complain</span>
-              </div>
-            </div>
-          </aside>
+               <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                 <span className="text-sm">Complain</span>
+               </div>
+               <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                 <span className="text-sm">CCASS</span>
+               </div>
+             </div>
+           </aside>
 
             {/* Mobile sidebar toggle */}
             <button
