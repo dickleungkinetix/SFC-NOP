@@ -179,7 +179,6 @@ export default function CCASS() {
                     <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Concentration</button>
                     <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Big changes all stocks</button>
                     <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Participants</button>
-                    <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">About CCASS</button>
                   </div>
                 </div>
 

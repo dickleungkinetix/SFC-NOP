@@ -219,41 +219,27 @@ const cards = [
   },
   {
     id: "corporations",
-    title: "HK-listed issuers and securitie",
+    title: "HK-listed issuers",
     icon: <IconCorporations />,
     links: [
-      "Number of issuers by market annuall",
-      "Name changes",
-      "Listed securities by type, board and date",
-      "Delisted securities by type, board and date",
-      "Current market value",
+      "League Table of advisers",
+      "Latest changes in SFC licensees",
     ],
     href: "/corporation/0001",
   },
   {
     id: "individuals",
-    title: "CCASS",
+    title: "HK-listed securitie",
     icon: <IconIndividuals />,
     links: [
+      "Listed securities by type, board and date",
+      "Current market value",      
       "Top CCASS change",
-      "CCASS concentration analysis",
+      "CCASS concentration",
       "CCASS Investor Participant stakes",
       "CCASS participants and holdings",
     ],
     href: "/individual/1",
-  },
-  {
-    id: "licensee",
-    title: "Licensees and Advisers",
-    icon: <IconLicensee />,
-    links: [
-      "League tables of SFC licensees",
-      "Latest changes in SFC licensees",
-      "Historic total of SFC licensees",
-      "League Table of advisers",
-      "Change of auditors of current HK-listed companies",
-    ],
-    href: "/licensee-corp",
   },
 ];
 
@@ -396,7 +382,7 @@ export default function LandingPage() {
 
       {/* ── Category Cards — float up over hero ── */}
       <div className="relative z-10 -mt-20 sm:-mt-24 lg:-mt-24 px-3 sm:px-4 lg:px-8 max-w-6xl mx-auto w-full">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-3">
           {cards.map((card) => (
             <a
               key={card.id}

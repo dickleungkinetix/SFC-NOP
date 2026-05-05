@@ -11,7 +11,6 @@ interface MobileMenuProps {
 const navItems = [
   { label: "HK-listed issuers", icon: <Users className="w-5 h-5 text-[#008581]" /> },
   { label: "HK-listed securities", icon: <Building2 className="w-5 h-5 text-[#008581]" /> },
-  { label: "Webb-site CCASS Analysis System", icon: <Landmark className="w-5 h-5 text-[#008581]" /> },
   { label: "Advisors to HK-listed issuers", icon: <FileText className="w-5 h-5 text-[#008581]" /> },
   { label: "SFC licensees analysis", icon: <LayoutGrid className="w-5 h-5 text-[#008581]" /> },
 ];

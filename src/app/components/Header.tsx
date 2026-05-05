@@ -8,7 +8,6 @@ const navItems = [
   { label: "HK-listed boards", color: "#007d3d" },
   { label: "HK-listed issuers", color: "#b13bb8" },
   { label: "HK-listed securities", color: "#7fd084" },
-  { label: "Webb-site CCASS Analysis System", color: "#d63200" },
   { label: "Advisors to HK-listed issuers", color: "#009bff" },
   { label: "SFC licensees analysis", color: "#ffb81d" },
 ];
