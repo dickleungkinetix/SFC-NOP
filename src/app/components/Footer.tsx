@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-4 px-4 lg:px-8">
+    <footer className="bg-white border-t border-gray-200 py-4 px-4 lg:px-8 pb-[70px] md:pb-4">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
         <p className="text-sm text-gray-500">
           Copyright © 2026 Securities and Futures Commission. All rights reserved.
