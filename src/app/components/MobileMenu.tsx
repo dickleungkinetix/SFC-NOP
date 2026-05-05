@@ -16,17 +16,20 @@ const navItems = [
   { label: "SFC licensees analysis", icon: <LayoutGrid className="w-5 h-5 text-[#008581]" /> },
 ];
 
-const ccassLinks = [
-  "Top CCASS changes",
-  "CCASS concentration analysis",
-  "CCASS Investor Participant stakes",
-  "CCASS participants and holdings",
-  "Shanghai-HK connect southbound positions",
-  "Shenzhen-HK connect southbound positions",
+const boardsLinks = [
+  "Board composition per Company",
+  "Distribution of directors per Company",
+  "Distribution of female directors per Company",
+  "Directorships by type and gender",
+  "Distribution of INEDs per person",
+  "Directorships per person",
+  "Age distribution of directors",
+  "Latest HK-listed directors",
+  "Webb-site League Table of directors"
 ];
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
-  const [expandedItem, setExpandedItem] = useState<string | null>("Stock Trading Analysis System");
+  const [expandedItem, setExpandedItem] = useState<string | null>("HK-listed boards");
 
   return (
     <>
@@ -64,10 +67,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </div>
           </div>
 
-          {/* Active: Stock Trading Analysis System */}
+          {/* Active: HK-listed boards */}
           <div className="px-4 pt-4">
             <button 
-              onClick={() => setExpandedItem(expandedItem === "Stock Trading Analysis System" ? null : "Stock Trading Analysis System")}
+              onClick={() => setExpandedItem(expandedItem === "HK-listed boards" ? null : "HK-listed boards")}
               className="w-full flex items-center justify-between bg-[#008581] rounded-xl px-3 py-3 mb-4 hover:bg-[#006b6a] transition-colors shadow-lg"
             >
               <div className="flex items-center gap-3 text-left">
@@ -78,15 +81,15 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   HK-listed boards
                 </span>
               </div>
-              <ChevronRight className={`w-4 h-4 text-white shrink-0 transition-transform duration-300 ${expandedItem === "Stock Trading Analysis System" ? "rotate-90" : ""}`} />
+              <ChevronRight className={`w-4 h-4 text-white shrink-0 transition-transform duration-300 ${expandedItem === "HK-listed boards" ? "rotate-90" : ""}`} />
             </button>
 
             {/* Expanded submenu with animation */}
-            {expandedItem === "Stock Trading Analysis System" && (
+            {expandedItem === "HK-listed boards" && (
               <div className="border-t-2 border-[#008581] pt-3 mb-4 animate-in fade-in slide-in-from-top-2 duration-300">
                 <p className="font-semibold text-[#008581] text-sm mb-3">HK-listed boards</p>
                 <ul className="space-y-2">
-                  {ccassLinks.map((link) => (
+                  {boardsLinks.map((link) => (
                     <li key={link}>
                       <a href="#" className="text-[#1a56b0] underline text-sm hover:text-[#008581]">
                         {link}

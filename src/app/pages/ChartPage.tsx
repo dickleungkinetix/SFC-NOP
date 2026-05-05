@@ -390,9 +390,10 @@ export default function ChartPage() {
               </div>
               <div className="p-6 space-y-2">
                 {sidebarTree.map((node) => (
-                  <div key={node.label} className="px-4 py-2.5 text-sm rounded-lg text-gray-600">
-                    {node.label}
-                  </div>
+                <div key={node.label} className="px-4 py-2.5 text-sm rounded-lg text-gray-600">
+                  <a href="/pages/CCASS" className="underline hover:text-[#008581]">{node.label}</a>
+                </div>
+
                 ))}
               </div>
             </aside>

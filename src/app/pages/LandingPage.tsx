@@ -487,6 +487,7 @@ export default function LandingPage() {
                     )}
                   </div>
                 </button>
+                {i === 2 && <span className="text-sm text-[#008581] font-semibold ml-6 block pt-1">More...</span>}
                 {openFaq === i && (
                   <p className="text-sm text-gray-600 pb-4 pr-8 leading-relaxed">{faq.a}</p>
                 )}

@@ -6,6 +6,8 @@ export function Footer() {
           Copyright © 2026 Securities and Futures Commission. All rights reserved.
         </p>
         <div className="flex flex-wrap items-center gap-1 text-sm text-[#1a56b0]">
+          <a href="#" className="hover:underline">About CCAAS</a>
+          <span className="text-gray-400">|</span>
           <a href="#" className="hover:underline">Maintenance Schedule</a>
           <span className="text-gray-400">|</span>
           <a href="#" className="hover:underline">Privacy Policy Statement</a>
@@ -13,6 +15,8 @@ export function Footer() {
           <a href="#" className="hover:underline">Terms of use</a>
           <span className="text-gray-400">|</span>
           <a href="#" className="hover:underline">Contact us</a>
+          <span className="text-gray-400">|</span>
+          <a href="#" className="hover:underline">FAQ</a>
         </div>
       </div>
     </footer>

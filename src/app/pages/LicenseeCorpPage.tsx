@@ -18,29 +18,30 @@ const sidebarTree: NavNode[] = [
     label: "Key Data",
     highlight: true,
   },
-  {
-    label: "CCASS",
-    highlight: true,
-    children: [
-      {
-        label: "Holdings",
-        children: [
-          { label: "Snapshot", active: true },
-          { label: "Custodians" },
-          { label: "Brokers" },
-          { label: "Investors" },
-          { label: "CCASS total" },
-          { label: "Non-CCASS" },
-        ],
-      },
-      { label: "Changes" },
-      { label: "Big Changes" },
-      { label: "Concentration" },
-      { label: "Big changes all stocks" },
-      { label: "Participants" },
-      { label: "About CCASS" },
-    ],
-  },
+    {
+      label: <a href="/pages/CCASS" className="text-[#009ca6] font-semibold underline hover:text-[#008581]">CCASS</a>,
+      highlight: true,
+      children: [
+        {
+          label: "Holdings",
+          children: [
+            { label: "Snapshot", active: true },
+            { label: "Custodians" },
+            { label: "Brokers" },
+            { label: "Investors" },
+            { label: "CCASS total" },
+            { label: "Non-CCASS" },
+          ],
+        },
+        { label: "Changes" },
+        { label: "Big Changes" },
+        { label: "Concentration" },
+        { label: "Big changes all stocks" },
+        { label: "Participants" },
+        { label: "About CCASS" },
+      ],
+    },
+
   { label: "Total Return" },
   { label: "Compare Return" },
   { label: "Prices" },
