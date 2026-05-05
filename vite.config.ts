@@ -30,7 +30,18 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  base: '/',
+  build: {
+    rollupOptions: {
+      output: {
+        // Ensure manualChunks doesn't create chunks that break client routing
+        manualChunks: undefined
+      }
+    }
+  },
+
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
+
