@@ -6,7 +6,7 @@ import IndividualDetailPage from "./pages/IndividualDetailPage";
 import LicenseeCorpPage from "./pages/LicenseeCorpPage";
 import ChartPage from "./pages/ChartPage";
 import Corporation0001 from "./pages/corporation/0001/index";
-import ccass from "./pages/ccass-detail";
+import CCASSDetail from "./pages/ccass-detail";
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "ccass",
-        Component: CCASS,
+        Component: CCASSDetail,
       },
       {
         path: "licensee-corp",
