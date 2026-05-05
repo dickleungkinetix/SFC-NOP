@@ -2,10 +2,10 @@ import { createBrowserRouter } from "react-router";
 import { Root } from "./Root";
 import LandingPage from "./pages/LandingPage";
 import SearchResultsPage from "./pages/SearchResultsPage";
-import CorporationDetailPage from "./pages/CorporationDetailPage";
 import IndividualDetailPage from "./pages/IndividualDetailPage";
 import LicenseeCorpPage from "./pages/LicenseeCorpPage";
 import ChartPage from "./pages/ChartPage";
+import Corporation0001 from "./pages/corporation/0001/index";
 
 export const router = createBrowserRouter([
   {
@@ -21,8 +21,8 @@ export const router = createBrowserRouter([
         Component: SearchResultsPage,
       },
       {
-        path: "corporation/:code",
-        Component: CorporationDetailPage,
+        path: "corporation/0001",
+        Component: () => <Corporation0001 />,
       },
       {
         path: "licensee-corp",

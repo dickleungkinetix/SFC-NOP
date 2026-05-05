@@ -79,10 +79,11 @@ const categoryCards = [
     title: "CCASS",
     Icon: IconCCASS,
     links: [
-      "Top CCASS changes",
-      "CCASS concentration analysis",
-      "CCASS Investor Participant stakes",
-      "CCASS participants and holdings",
+      "Board composition per Company",
+      "Distribution of directors per Company",
+      "Distribution of female directors per Company",
+      "Directorship by type and gender",
+      "Distribution of INEDs per Company",
     ],
   },
   {
@@ -114,6 +115,18 @@ const categoryCards = [
       "League tables of SFC licensees",
       "Latest changes in SFC licensees",
       "Historic total of SFC licensees",
+    ],
+  },
+  {
+    id: "hk-listed-boards",
+    title: "HK-listed boards",
+    Icon: IconCorporations,
+    links: [
+      "Board composition per Company",
+      "Distribution of directors per Company",
+      "Distribution of female directors per Company",
+      "Directorship by type and gender",
+      "Distribution of INEDs per Company",
     ],
   },
 ];
@@ -328,48 +341,53 @@ export function Home() {
         </div>
       </section>
 
-      {/* ===== FAQ SECTION ===== */}
-      <section className="px-4 lg:px-6 py-6 lg:py-8 max-w-screen-xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Left: Accordion */}
-          <div className="flex flex-col gap-3">
-            {faqItems.map((item, i) => (
-              <div
-                key={i}
-                className="border border-gray-200 rounded-lg overflow-hidden"
-              >
-                <button
-                  className={`w-full flex items-center justify-between px-4 py-3 text-left ${
-                    item.highlight && openFaq === i
-                      ? "bg-[#f0fbfa]"
-                      : "bg-white hover:bg-gray-50"
-                  } transition-colors`}
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                >
-                  <span
-                    className={`text-sm font-medium ${
-                      item.highlight ? "text-[#009ca6]" : "text-gray-700"
-                    }`}
-                  >
-                    {item.q}
-                  </span>
-                  {openFaq === i ? (
-                    <ChevronUp size={16} className="text-gray-400 shrink-0 ml-2" />
-                  ) : (
-                    <ChevronDown size={16} className="text-gray-400 shrink-0 ml-2" />
-                  )}
-                </button>
-                {openFaq === i && (
-                  <div className="px-4 py-3 bg-white border-t border-gray-100">
-                    <p className="text-sm text-gray-600">{item.a}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+       {/* ===== FAQ SECTION ===== */}
+       <section className="px-4 lg:px-6 py-6 lg:py-8 max-w-screen-xl mx-auto w-full">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+           {/* Left: Accordion */}
+           <div className="flex flex-col gap-3">
+             {faqItems.map((item, i) => (
+               <div
+                 key={i}
+                 className="border border-gray-200 rounded-lg overflow-hidden"
+               >
+                 <button
+                   className={`w-full flex items-center justify-between px-4 py-3 text-left ${
+                     item.highlight && openFaq === i
+                       ? "bg-[#f0fbfa]"
+                       : "bg-white hover:bg-gray-50"
+                   } transition-colors`}
+                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                 >
+                   <span
+                     className={`text-sm font-medium ${
+                       item.highlight ? "text-[#009ca6]" : "text-gray-700"
+                     }`}
+                   >
+                     {item.q}
+                   </span>
+                   {openFaq === i ? (
+                     <ChevronUp size={16} className="text-gray-400 shrink-0 ml-2" />
+                   ) : (
+                     <ChevronDown size={16} className="text-gray-400 shrink-0 ml-2" />
+                   )}
+                 </button>
+                 {openFaq === i && (
+                   <div className="px-4 py-3 bg-white border-t border-gray-100">
+                     <p className="text-sm text-gray-600">{item.a}</p>
+                   </div>
+                 )}
+               </div>
+             ))}
+             <div className="flex justify-end pt-2">
+               <button className="text-sm text-[#009ca6] font-medium hover:text-[#007a82] transition-colors">
+                 More...
+               </button>
+             </div>
+           </div>
 
           {/* Right: FAQ Description */}
-          <div className="h-full flex flex-col gap-3">
+          <div className="flex flex-col gap-3">
             <h2 className="text-2xl font-bold text-gray-800">
               Frequently{" "}
               <span className="text-[#009ca6]">Asked Questions</span>
@@ -378,7 +396,6 @@ export function Home() {
               This FAQ covers using CCASS visualizations to track big-player moves, setting unlimited
               real-time alerts for disclosures and large trades, plus seamless mobile/desktop access.
             </p>
-            <a href="#" className="self-end mt-auto text-sm font-semibold text-[#008581] hover:underline">More...</a>
           </div>
         </div>
       </section>
@@ -421,12 +438,11 @@ export function Home() {
                 <p className="text-sm font-semibold text-[#009ca6] mb-2">Stock Trading Analysis System</p>
                 <div className="h-px bg-[#009ca6] mb-3" />
                 {[
-                  "Top CCASS changes",
-                  "CCASS concentration analysis",
-                  "CCASS Investor Participant stakes",
-                  "CCASS participants and holdings",
-                  "Shanghai-HK connect southbound positions",
-                  "Shenzhen-HK connect southbound positions",
+                  "Board composition per Company",
+                  "Distribution of directors per Company",
+                  "Distribution of female directors per Company",
+                  "Directorship by type and gender",
+                  "Distribution of INEDs per Company",
                 ].map((item) => (
                   <a
                     key={item}

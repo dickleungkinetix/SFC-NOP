@@ -652,10 +652,11 @@ function Container15() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full" data-name="Container">
       <div className="font-['Arial:Regular',sans-serif] leading-[0] not-italic relative shrink-0 text-[13px] text-white w-[169.41px]">
-        <p className="decoration-solid leading-[15.311px] mb-0 underline">Top CCASS changes</p>
-        <p className="decoration-solid leading-[15.311px] mb-0 underline">CCASS concentration analysis</p>
-        <p className="decoration-solid leading-[15.311px] mb-0 underline">CCASS Investor Participant stakes</p>
-        <p className="decoration-solid leading-[15.311px] underline">CCASS participants and holdings</p>
+        <p className="decoration-solid leading-[15.311px] mb-0 underline">Board composition per Company</p>
+        <p className="decoration-solid leading-[15.311px] mb-0 underline">Distribution of directors per Company</p>
+        <p className="decoration-solid leading-[15.311px] mb-0 underline">Distribution of female directors per Company</p>
+        <p className="decoration-solid leading-[15.311px] mb-0 underline">Directorship by type and gender</p>
+        <p className="decoration-solid leading-[15.311px] mb-0 underline">Distribution of INEDs per Company</p>
       </div>
     </div>
   );

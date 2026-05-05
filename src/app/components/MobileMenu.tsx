@@ -9,12 +9,11 @@ interface MobileMenuProps {
 }
 
 const navItems = [
-  { label: "Advisors to HK-listed issuers", icon: <Users className="w-5 h-5 text-[#008581]" /> },
-  { label: "HK Companies Registry analysis", icon: <Building2 className="w-5 h-5 text-[#008581]" /> },
-  { label: "UK Companies House analysis", icon: <Landmark className="w-5 h-5 text-[#008581]" /> },
-  { label: "SFC licensees analysis", icon: <FileText className="w-5 h-5 text-[#008581]" /> },
-  { label: "Categories", icon: <LayoutGrid className="w-5 h-5 text-[#008581]" /> },
-  { label: "Faq", icon: <HelpCircle className="w-5 h-5 text-[#008581]" /> },
+  { label: "HK-listed issuers", icon: <Users className="w-5 h-5 text-[#008581]" /> },
+  { label: "HK-listed securities", icon: <Building2 className="w-5 h-5 text-[#008581]" /> },
+  { label: "Webb-site CCASS Analysis System", icon: <Landmark className="w-5 h-5 text-[#008581]" /> },
+  { label: "Advisors to HK-listed issuers", icon: <FileText className="w-5 h-5 text-[#008581]" /> },
+  { label: "SFC licensees analysis", icon: <LayoutGrid className="w-5 h-5 text-[#008581]" /> },
 ];
 
 const ccassLinks = [
@@ -76,7 +75,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <BarChart2 className="w-5 h-5 text-white" />
                 </div>
                 <span className="font-semibold text-sm text-white leading-tight">
-                  Stock Trading<br />Analysis System
+                  HK-listed boards
                 </span>
               </div>
               <ChevronRight className={`w-4 h-4 text-white shrink-0 transition-transform duration-300 ${expandedItem === "Stock Trading Analysis System" ? "rotate-90" : ""}`} />
@@ -85,7 +84,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             {/* Expanded submenu with animation */}
             {expandedItem === "Stock Trading Analysis System" && (
               <div className="border-t-2 border-[#008581] pt-3 mb-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                <p className="font-semibold text-[#008581] text-sm mb-3">Stock Trading Analysis System</p>
+                <p className="font-semibold text-[#008581] text-sm mb-3">HK-listed boards</p>
                 <ul className="space-y-2">
                   {ccassLinks.map((link) => (
                     <li key={link}>

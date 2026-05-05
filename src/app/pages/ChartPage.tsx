@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import imgHero from "figma:asset/4095f7088a770ad2fc6a4abd1dbaf4eb80413283.png";
+import imgHero from "../../assets/4095f7088a770ad2fc6a4abd1dbaf4eb80413283.png";
 
 // ──────────────── SIDEBAR TREE ────────────────
 
@@ -324,13 +324,31 @@ export default function ChartPage() {
           <div className="flex gap-4 lg:gap-6 relative">
 
             {/* Desktop Sidebar */}
-            <aside className="hidden lg:block lg:relative lg:w-52 lg:shrink-0 bg-white rounded-xl p-4 h-fit">
-              <div className="space-y-2">
-                {sidebarTree.map((node) => (
-                  <SidebarItem key={node.label} node={node} />
-                ))}
+          <aside className="hidden lg:block lg:sticky lg:top-[130px] lg:w-52 lg:shrink-0 bg-white rounded-xl p-4 h-fit">
+            <div className="space-y-2">
+              <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-[#009ca6]" style={{ paddingLeft: '8px' }}>
+                <span className="text-sm text-[#009ca6]">Key Data</span>
               </div>
-            </aside>
+              <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                <span className="text-sm">Officers</span>
+              </div>
+              <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                <span className="text-sm">Overlaps</span>
+              </div>
+              <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                <span className="text-sm">Pay</span>
+              </div>
+              <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                <span className="text-sm">Advisers</span>
+              </div>
+              <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                <span className="text-sm">Financials</span>
+              </div>
+              <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                <span className="text-sm">Complain</span>
+              </div>
+            </div>
+          </aside>
 
             {/* Mobile sidebar toggle */}
             <button

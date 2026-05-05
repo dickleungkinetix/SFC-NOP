@@ -13,11 +13,10 @@ interface NavNode {
 
 const sidebarTree: NavNode[] = [
   { label: "Key Data", active: true },
-  { label: "FAQ" },
   { label: "Positions" },
   { label: "Pay" },
   { label: "Dealings" },
-  { label: "SFC Reports" },
+  { label: "New" },
 ];
 
 // ──────────────── DATA ────────────────
@@ -55,7 +54,7 @@ export default function IndividualDetailPage() {
         <div className="flex gap-4 lg:gap-6 relative">
 
           {/* Desktop Sidebar */}
-          <aside className="hidden lg:block lg:relative lg:w-52 lg:shrink-0 bg-white rounded-xl p-4 h-fit">
+          <aside className="hidden lg:block lg:sticky lg:top-[130px] lg:w-52 lg:shrink-0 bg-white rounded-xl p-4 h-fit">
             <div className="space-y-2">
               {sidebarTree.map((node) => (
                 <div

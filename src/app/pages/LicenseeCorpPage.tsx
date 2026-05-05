@@ -17,24 +17,41 @@ const sidebarTree: NavNode[] = [
   {
     label: "Key Data",
     highlight: true,
-    children: [],
   },
   {
-    label: "Officers",
+    label: "CCASS",
     highlight: true,
-    active: true,
     children: [
-      { label: "All ranks", active: true },
-      { label: "Main board summary" },
-      { label: "FAQ" },
+      {
+        label: "Holdings",
+        children: [
+          { label: "Snapshot", active: true },
+          { label: "Custodians" },
+          { label: "Brokers" },
+          { label: "Investors" },
+          { label: "CCASS total" },
+          { label: "Non-CCASS" },
+        ],
+      },
+      { label: "Changes" },
+      { label: "Big Changes" },
+      { label: "Concentration" },
+      { label: "Big changes all stocks" },
+      { label: "Participants" },
+      { label: "About CCASS" },
     ],
   },
-  { label: "Advisers" },
-  { label: "Complain" },
+  { label: "Total Return" },
+  { label: "Compare Return" },
+  { label: "Prices" },
+  { label: "Events" },
+  { label: "Dealings" },
+  { label: "Quote" },
+  { label: "Officers" },
   { label: "Pay" },
+  { label: "Advisers" },
   { label: "Financials" },
-  { label: "Overlaps" },
-  { label: "Ess" },
+  { label: "Complain" },
 ];
 
 function SidebarItem({ node, depth = 0 }: { node: NavNode; depth?: number }) {
@@ -130,8 +147,8 @@ export default function LicenseeCorpPage() {
         <div className="relative max-w-7xl mx-auto w-full px-2 sm:px-4 lg:px-6 py-4 lg:py-6">
           <div className="flex gap-4 lg:gap-6 relative">
 
-            {/* Desktop Sidebar */}
-            <aside className="hidden lg:block lg:relative lg:w-52 lg:shrink-0 bg-white rounded-xl p-4 h-fit shadow-sm">
+          {/* Desktop Sidebar */}
+            <aside className="hidden lg:block lg:sticky lg:top-[130px] lg:w-52 lg:shrink-0 bg-white rounded-xl p-4 h-fit shadow-sm">
               <div className="space-y-1">
                 {sidebarTree.map((node) => (
                   <SidebarItem key={node.label} node={node} />

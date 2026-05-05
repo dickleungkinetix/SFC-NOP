@@ -5,13 +5,12 @@ import { SFCLogo } from "./SFCLogo";
 import { MobileMenu } from "./MobileMenu";
 
 const navItems = [
-  { label: "Stock Trading Analysis System", color: "#007d3d" },
-  { label: "Advisors to HK-listed issuers", color: "#b13bb8" },
-  { label: "HK Companies Registry analysis", color: "#7fd084" },
-  { label: "UK Companies House analysis", color: "#d63200" },
-  { label: "SFC licensees analysis", color: "#009bff" },
-  { label: "Categories", color: "#ffb81d" },
-  { label: "Faq", color: "#9333ea" },
+  { label: "HK-listed boards", color: "#007d3d" },
+  { label: "HK-listed issuers", color: "#b13bb8" },
+  { label: "HK-listed securities", color: "#7fd084" },
+  { label: "Webb-site CCASS Analysis System", color: "#d63200" },
+  { label: "Advisors to HK-listed issuers", color: "#009bff" },
+  { label: "SFC licensees analysis", color: "#ffb81d" },
 ];
 
 interface HeaderProps {
@@ -202,97 +201,49 @@ export function Header({
                          <span className={`text-xl ${openNavItem === item.label ? 'font-black' : 'font-bold'} text-gray-900`}>{item.label}</span>
                       </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-x-8 gap-y-10 text-left">
-                      {/* Column 1: Trading Analysis */}
-                      <div>
-                        <div className="flex items-center gap-2 mb-5">
-                          <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7" /><path d="M16 5V3" /><path d="M8 5V3" /><path d="M3 9h16" /><path d="m15 18 3 3 5-5" />
-                          </svg>
-                          <h4 className="font-bold text-gray-900 text-sm tracking-tight whitespace-normal">Trading Analysis</h4>
+                    {item.label === "HK-listed boards" && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-12 gap-y-10 text-left">
+                        {/* Column 1: Board Composition & Analysis */}
+                        <div>
+                          <ul className="space-y-3.5">
+                            {["Board composition per Company", "Distribution of directors per Company", "Distribution of female directors per Company", "Directorships by type and gender", "Distribution of INEDs per person"].map(link => (
+                              <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                            ))}
+                          </ul>
                         </div>
-                        <ul className="space-y-3.5">
-                          {["Market share", "Trading activity", "Short selling", "Stock analysis"].map(link => (
-                            <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                          ))}
-                        </ul>
-                      </div>
 
-                      {/* Column 2: Stock Information */}
-                      <div>
-                        <div className="flex items-center gap-2 mb-5">
-                          <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />
-                          </svg>
-                          <h4 className="font-bold text-gray-900 text-sm tracking-tight whitespace-normal">Stock Information</h4>
+                        {/* Column 2: Director Information */}
+                        <div>
+                          <ul className="space-y-3.5">
+                            {["Directorships per person", "Age distribution of directors", "Latest HK-listed directors", "Webb-site League Table of directors"].map(link => (
+                              <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                            ))}
+                          </ul>
                         </div>
-                        <ul className="space-y-3.5">
-                          {["Stock list", "IPO", "Stock suspended", "Stock search"].map(link => (
-                            <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Column 3: Exchange Participant */}
-                      <div>
-                        <div className="flex items-center gap-2 mb-5">
-                          <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                          </svg>
-                          <h4 className="font-bold text-gray-900 text-sm tracking-tight whitespace-normal">Exchange Participant</h4>
-                        </div>
-                        <ul className="space-y-3.5">
-                          {["Participant list", "Category", "Status", "Participant search"].map(link => (
-                            <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Column 4: Short Position */}
-                      <div>
-                        <div className="flex items-center gap-2 mb-5">
-                          <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M12 20v-6M6 20V10M18 20V4" />
-                          </svg>
-                          <h4 className="font-bold text-gray-900 text-sm tracking-tight whitespace-normal">Short Position</h4>
-                        </div>
-                        <ul className="space-y-3.5">
-                          {["Weekly report", "Daily report", "Aggregated", "History"].map(link => (
-                            <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Column 5: Shareholding Analysis */}
-                      <div>
-                        <div className="flex items-center gap-2 mb-5">
-                          <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83" /><path d="M22 12A10 10 0 0 0 12 2v10z" />
-                          </svg>
-                          <h4 className="font-bold text-gray-900 text-sm tracking-tight whitespace-normal">Shareholding Analysis</h4>
-                        </div>
-                        <ul className="space-y-3.5">
-                          {["Disclosure", "Large shareholding", "History", "Search"].map(link => (
-                            <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Column 6: Others */}
-                      <div>
-                        <div className="flex items-center gap-2 mb-5">
-                          <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /><circle cx="5" cy="12" r="1" />
-                          </svg>
-                          <h4 className="font-bold text-gray-900 text-sm tracking-tight whitespace-normal">Others</h4>
-                        </div>
-                        <ul className="space-y-3.5">
-                          {["Feedback", "FAQ", "Contact", "About SFC"].map(link => (
-                            <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                          ))}
-                        </ul>
                        </div>
-                     </div>
+                    )}
+
+                    {item.label === "HK-listed issuers" && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-12 gap-y-10 text-left">
+                        {/* Column 1: Regulatory & Market Information */}
+                        <div>
+                          <ul className="space-y-3.5">
+                            {["Stock Exchange listed issuer regulatory teams", "Number of issuers by market annually", "Domicile", "Domicile changes (including unlisted companies)", "Name changes"].map(link => (
+                              <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Column 2: Financial & Company Information */}
+                        <div>
+                          <ul className="space-y-3.5">
+                            {["Financial year-end", "Reporting speed", "Companies' web sites"].map(link => (
+                              <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                            ))}
+                          </ul>
+                        </div>
+                       </div>
+                    )}
                     </div>
                   </div>
                 )}
