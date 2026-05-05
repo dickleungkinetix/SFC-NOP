@@ -347,9 +347,9 @@ export default function Corporation0001() {
                 <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
                   <span className="text-sm">Complain</span>
                 </div>
-                <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
+                <a href="/CCASS" className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600 block" style={{ paddingLeft: '8px', textDecoration: 'none' }}>
                   <span className="text-sm">CCASS</span>
-                </div>
+                </a>
               </div>
             </aside>
 
@@ -390,9 +390,10 @@ export default function Corporation0001() {
               </div>
               <div className="p-6 space-y-2">
                 {sidebarTree.map((node) => (
-                  <div key={node.label} className="px-4 py-2.5 text-sm rounded-lg text-gray-600">
-                    {node.label}
-                  </div>
+                <div key={node.label} className="px-4 py-2.5 text-sm rounded-lg text-gray-600">
+                  <a href="/pages/CCASS" className="underline hover:text-[#008581]">{node.label}</a>
+                </div>
+
                 ))}
               </div>
             </aside>
@@ -428,7 +429,6 @@ export default function Corporation0001() {
 
                  {/* FAQ Section */}
                   <div className="mb-8">
-                    <h2 className="text-black font-bold text-base mb-4">FAQ</h2>
                     <div className="space-y-2 text-sm text-gray-700">
                      <div className="grid grid-cols-2 gap-x-8 gap-y-2">
                        <div><span className="font-semibold">Domicile:</span></div>
