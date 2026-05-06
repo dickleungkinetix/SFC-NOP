@@ -211,7 +211,7 @@ export default function IndividualDetailPage() {
                     {/* Estimated Date of Birth */}
                     <div className="border border-gray-200 rounded-lg p-4">
                       <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">ESTIMATED DATE OF BIRTH</p>
-                      <p className="text-lg font-bold text-[#009ca6]">1945-06-24</p>
+                      <p className="text-lg font-bold text-[#009ca6]">1945</p>
                     </div>
                     {/* Estimated Age */}
                     <div className="border border-gray-200 rounded-lg p-4">
