@@ -247,16 +247,16 @@ const cards = [
 
 const faqs = [
   {
-    q: "What makes SFC CCASS visualization unique?",
-    a: "It scans 3,000+ HK stocks daily, showing time-series charts of holdings changes for instant detection of transfers and big-player moves.",
+    q: '1. What does code "U" mean?',
+    a: 'In SFC Database, "U" in the Officers, Advisers or Ownership tables means the person no longer holds that position but we do not know when the person ceased to hold the position.',
   },
   {
-    q: "How do the email alerts work, and what can I track?",
-    a: "Set up unlimited real-time email alerts for specific stocks, thresholds, and participant changes. Alerts trigger instantly when CCASS updates.",
+    q: '2. What does code "From" and "Until" dates mean?',
+    a: 'For positions, we use the right-open interval convention for time periods, which means that the period includes the "from" date but excludes the "until" date. The until date is the first date on which the person no longer holds a position. The reason we use this convention is that it makes it easier to see when a person has changed a position: until data is the date when they have changed positions or when the position is ended. It also makes it easier to see when a person has changed position in an organisation, as the two dates will make it easier to see when a person has changed position. For directorships, the "until" date is the first date on which the person no longer holds the position in that organisation.',
   },
   {
-    q: "Is the platform mobile-friendly for on-the-go research?",
-    a: "Yes. The platform is fully optimized for both mobile and desktop, allowing seamless research whether at your desk or on the move.",
+    q: '3. What is total return and CAGR?',
+    a: 'The total return on the ordinary shares of the company over the period in which the person holds or held the position, or since 3-Jan-1994 if the directorship began earlier. For more information on the calculation, see the notes on SFC Investor League Tables and the notes on sfc total returns. The Compound Annualised Growth Rate (CAGR) is the annualised rate of return.',
   },
 ];
 
@@ -282,6 +282,22 @@ function RadioOption({
       </div>
       <span className="text-sm text-gray-800 whitespace-nowrap select-none">{label}</span>
     </label>
+  );
+}
+
+// ──────────────── LINKS ────────────────
+
+function FAQLink({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a href="/faq" className={className}>
+      {children}
+    </a>
   );
 }
 
@@ -478,7 +494,9 @@ export default function LandingPage() {
             )}
               </div>
             ))}
-          <span className="text-sm text-[#008581] font-semibold block pt-1">More...</span>
+          <span className="text-sm text-[#008581] font-semibold block pt-1">
+            <FAQLink>More...</FAQLink>
+          </span>
           </div>
           
         </div>
