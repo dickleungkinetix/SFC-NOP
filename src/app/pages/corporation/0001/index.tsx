@@ -594,7 +594,7 @@ export default function Corporation0001() {
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">4556</td>
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">2012-06-18</td>
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">2015-06-10</td>
-                            <td className="py-3 px-3 text-[#009ca6] underline cursor-pointer">Docs</td>
+                            <td className="py-3 px-3 text-[#009ca6] underline cursor-pointer"><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Doc</button></td>
                           </tr>
                           <tr className="border-b border-gray-100">
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">Note</td>
@@ -605,7 +605,7 @@ export default function Corporation0001() {
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">2013-01-25</td>
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">2018-01-26</td>
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">2018-02-01</td>
-                            <td className="py-3 px-3 text-[#009ca6] underline cursor-pointer">Docs</td>
+                            <td className="py-3 px-3 text-[#009ca6] underline cursor-pointer"><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Doc</button></td>
                           </tr>
                           <tr className="border-b border-gray-100">
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">Note</td>
@@ -616,7 +616,7 @@ export default function Corporation0001() {
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">2012-07-10</td>
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">2017-07-12</td>
                             <td className="py-3 px-3 text-gray-700 border-r border-gray-100">2017-07-18</td>
-                            <td className="py-3 px-3 text-[#009ca6] underline cursor-pointer">Docs</td>
+                            <td className="py-3 px-3 text-[#009ca6] underline cursor-pointer"><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Doc</button></td>
                           </tr>
                         </tbody>
                       </table>
