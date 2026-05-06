@@ -33,7 +33,7 @@ const sidebarTree: NavNode[] = [
   { label: "Quote" },
   { label: "Officers" },
   { label: "Advisers" },
-  { label: "Complain" },
+  { label: "Listing Team" },
   { label: "Pay" },
   { label: "Financials" },
   { label: "Overlaps" },
@@ -345,7 +345,7 @@ export default function Corporation0001() {
                   <span className="text-sm">Financials</span>
                 </div>
                 <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
-                  <span className="text-sm">Complain</span>
+                  <span className="text-sm">Listing Team</span>
                 </div>
                 <a href="/CCASS" className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600 block" style={{ paddingLeft: '8px', textDecoration: 'none' }}>
                   <span className="text-sm">CCASS</span>
