@@ -174,22 +174,27 @@ export function Header({
         {/* ── Desktop Navigation Bar ── */}
         <nav className="hidden lg:block border-t border-gray-100">
           <div className="relative flex items-center justify-center px-4 lg:px-8" ref={megaMenuRef}>
-            {navItems.map((item) => (
-              <div key={item.label}>
-                <button
-                  onClick={() => setOpenNavItem(openNavItem === item.label ? null : item.label)}
-                  className={`relative text-sm px-3 py-3 whitespace-nowrap shrink-0 block w-full text-left ${
-                    openNavItem === item.label 
-                      ? "font-bold text-[#008783]" 
-                      : "text-gray-800 hover:text-gray-600"
-                  }`}
-                >
-                  {item.label}
-                  <span
-                    className="absolute bottom-0 left-0 right-0 h-[3px]"
-                    style={{ backgroundColor: item.color }}
-                  />
-                </button>
+                {navItems.map((item) => (
+                  <div 
+                    key={item.label}
+                    className="relative group"
+                    onMouseEnter={() => setOpenNavItem(item.label)}
+                    onMouseLeave={() => setOpenNavItem(null)}
+                  >
+                    <button
+                      className={`relative text-sm px-3 py-3 whitespace-nowrap shrink-0 block w-full text-left ${
+                        openNavItem === item.label 
+                          ? "font-bold text-[#008783]" 
+                          : "text-gray-800 hover:text-gray-600"
+                      }`}
+                    >
+                      {item.label}
+                      <span
+                        className="absolute bottom-0 left-0 right-0 h-[3px]"
+                        style={{ backgroundColor: item.color }}
+                      />
+                    </button>
+
                 
                 {/* Mega Menu - Click-based accordion with smooth animation */}
                 {openNavItem === item.label && (
