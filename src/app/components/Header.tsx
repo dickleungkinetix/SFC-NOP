@@ -173,7 +173,7 @@ export function Header({
 
         {/* ── Desktop Navigation Bar ── */}
         <nav className="hidden lg:block border-t border-gray-100">
-          <div className="relative flex items-center justify-center px-4 lg:px-8" ref={megaMenuRef}>
+          <div className="relative flex items-center justify-center mx-auto px-4 lg:px-8 max-w-7xl" ref={megaMenuRef}>
                 {navItems.map((item) => (
                   <div 
                     key={item.label}
