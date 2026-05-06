@@ -432,7 +432,7 @@ export default function ChartPage() {
                   <table className="w-full text-sm border border-gray-200">
                     <thead>
                       <tr className="border-b border-gray-200 bg-gray-50">
-                        {["EXCHANGE", "CODE", "LISTED", "LAST TRADE", "DELISTED"].map((col) => (
+                        {["EXCHANGE", "CODE", "LISTED", "LAST TRADE", "DELISTED", ""].map((col) => (
                           <th
                             key={col}
                             className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0"
@@ -448,6 +448,7 @@ export default function ChartPage() {
                         <td className="py-3 px-3 text-gray-700 border-r border-gray-100">00001</td>
                         <td className="py-3 px-3 text-gray-700 border-r border-gray-100">1972-11-01</td>
                         <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>
+                        <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>                        
                         <td className="py-3 px-3 text-[#009ca6] underline cursor-pointer"><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Docs</button></td>
                       </tr>
                     </tbody>
