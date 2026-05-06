@@ -326,7 +326,7 @@ export default function Corporation0001() {
             {/* Desktop Sidebar */}
             <aside className="hidden lg:block lg:sticky lg:top-[130px] lg:w-52 lg:shrink-0 bg-white rounded-xl p-4 h-fit">
               <div className="space-y-2">
-                <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-[#009ca6]" style={{ paddingLeft: '8px' }}>
+                <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors px-2 rounded-lg text-[#008581] font-semibold bg-cyan-100" style={{ paddingLeft: '8px' }}>
                   <span className="text-sm text-[#009ca6]">Key Data</span>
                 </div>
                 <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
