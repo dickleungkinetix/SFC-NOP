@@ -216,7 +216,7 @@ export default function IndividualDetailPage() {
                     {/* Estimated Age */}
                     <div className="border border-gray-200 rounded-lg p-4">
                       <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">ESTIMATED AGE</p>
-                      <p className="text-lg font-bold text-gray-900">80 years 279 days</p>
+                      <p className="text-lg font-bold text-gray-900">80 years</p>
                     </div>
                   </div>
                 </div>
