@@ -6,7 +6,7 @@ import svgPaths from "../../imports/svg-7ratgxrxq9";
 import imgHero from "figma:asset/4095f7088a770ad2fc6a4abd1dbaf4eb80413283.png";
 
 const searchResults = [
-  "HSBC BANK PLC",
+  "CK Hutchison Holdings Limited",
   "HSBC BROKING (CHINA) LIMITED",
   "HSBC BROKING FOREX (ASIA) LIMITED",
   "HSBC BROKING FUTURES (ASIA) LIMITED",
