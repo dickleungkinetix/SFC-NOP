@@ -230,23 +230,7 @@ export default function IndividualDetailPage() {
               </div>
 
               {/* Bottom cards row */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* SFC Trust Rating */}
-                <div className="border border-gray-200 rounded-xl p-4 lg:p-6">
-                  <h2 className="text-[#008581] font-semibold text-lg mb-5">
-                    SFC Trust Rating
-                  </h2>
-                  <div className="flex gap-4">
-                    <div className="flex-1 border border-gray-200 rounded-lg p-4 text-center">
-                      <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">USERS</p>
-                      <p className="text-3xl font-bold text-gray-900">0</p>
-                    </div>
-                    <div className="flex-1 border border-gray-200 rounded-lg p-4 text-center">
-                      <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">AVERAGE (0-5)</p>
-                      <p className="text-3xl font-bold text-gray-400">N/A</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
 
                 {/* Relatives */}
                 <div className="border border-gray-200 rounded-xl p-4 lg:p-6">
