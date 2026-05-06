@@ -34,20 +34,22 @@ export function Header({
   const megaMenuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  // Close mega menu when clicking outside
+  // Hover-based mega menu (keeps the same positioning/container; no layout changes).
+  // We still use `megaMenuRef` so we can close when the mouse leaves the whole nav area.
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (megaMenuRef.current && !megaMenuRef.current.contains(e.target as Node)) {
-        setOpenNavItem(null);
-      }
+    if (!openNavItem) return;
+
+    const el = megaMenuRef.current;
+    if (!el) return;
+
+    const handleMouseLeave = (e: MouseEvent) => {
+      // If the pointer actually left our nav container, close.
+      if (e.relatedTarget instanceof Node && el.contains(e.relatedTarget)) return;
+      setOpenNavItem(null);
     };
 
-    if (openNavItem) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    el.addEventListener("mouseleave", handleMouseLeave);
+    return () => el.removeEventListener("mouseleave", handleMouseLeave);
   }, [openNavItem]);
 
   const handleSearch = () => {
@@ -173,35 +175,32 @@ export function Header({
 
         {/* ── Desktop Navigation Bar ── */}
         <nav className="hidden lg:block border-t border-gray-100">
-          <div className="relative flex items-center justify-center mx-auto px-4 lg:px-8 max-w-7xl" ref={megaMenuRef}>
-                {navItems.map((item) => (
-                  <div 
-                    key={item.label}
-                    className="relative group"
-                    onMouseEnter={() => setOpenNavItem(item.label)}
-                    onMouseLeave={() => setOpenNavItem(null)}
-                  >
-                    <button
-                      className={`relative text-sm px-3 py-3 whitespace-nowrap shrink-0 block w-full text-left ${
-                        openNavItem === item.label 
-                          ? "font-bold text-[#008783]" 
-                          : "text-gray-800 hover:text-gray-600"
-                      }`}
-                    >
-                      {item.label}
-                      <span
-                        className="absolute bottom-0 left-0 right-0 h-[3px]"
-                        style={{ backgroundColor: item.color }}
-                      />
-                    </button>
-
+          <div className="relative flex items-center justify-center px-4 lg:px-8" ref={megaMenuRef}>
+            {navItems.map((item) => (
+              <div key={item.label}>
+                <button
+                  type="button"
+                  onMouseEnter={() => setOpenNavItem(item.label)}
+                  onFocus={() => setOpenNavItem(item.label)}
+                  className={`relative text-sm px-3 py-3 whitespace-nowrap shrink-0 block w-full text-left ${
+                    openNavItem === item.label
+                      ? "font-bold text-[#008783]"
+                      : "text-gray-800 hover:text-gray-600"
+                  }`}
+                >
+                  {item.label}
+                  <span
+                    className="absolute bottom-0 left-0 right-0 h-[3px]"
+                    style={{ backgroundColor: item.color }}
+                  />
+                </button>
                 
                 {/* Mega Menu - Click-based accordion with smooth animation */}
                 {openNavItem === item.label && (
-                    <div 
-                      className="fixed top-full left-1/2 -translate-x-1/2 w-[calc(100vw-40px)] lg:w-[1100px] max-w-7xl mx-auto bg-white shadow-2xl border-t-2 z-50 animate-in fade-in slide-in-from-top-2 duration-300"
-                      style={{ borderTopColor: item.color }}
-                    >
+                  <div 
+                    className="absolute top-full left-1/2 -translate-x-1/2 w-[calc(100vw-40px)] lg:w-[1100px] max-w-7xl bg-white shadow-2xl border-t-2 z-50 animate-in fade-in slide-in-from-top-2 duration-300"
+                    style={{ borderTopColor: item.color }}
+                  >
                     <div className="p-8">
                       {/* Header with Title and Icon */}
                       <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-100">
