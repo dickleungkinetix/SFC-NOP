@@ -1,0 +1,7 @@
+@theme inline {
+  --breakpoint-sm: 765px;
+  --breakpoint-md: 991px;
+  --breakpoint-lg: 1199px;
+  --breakpoint-xl: 1299px;
+  --breakpoint-2xl: 1599px;
+}
