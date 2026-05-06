@@ -16,7 +16,7 @@ export function Footer() {
           <span className="text-gray-400">|</span>
           <a href="#" className="hover:underline">Contact us</a>
           <span className="text-gray-400">|</span>
-          <a href="#" className="hover:underline">FAQ</a>
+          <a href="/Faq" className="hover:underline">FAQ</a>
         </div>
       </div>
     </footer>

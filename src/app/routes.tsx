@@ -5,6 +5,7 @@ import SearchResultsPage from "./pages/SearchResultsPage";
 import IndividualDetailPage from "./pages/IndividualDetailPage";
 import LicenseeCorpPage from "./pages/LicenseeCorpPage";
 import ChartPage from "./pages/ChartPage";
+import FaqPage from "./pages/FaqPage";
 import Corporation0001 from "./pages/corporation/0001/index";
 import CCASSDetail from "./pages/ccass-detail";
 
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
       {
         path: "chart",
         Component: ChartPage,
+      },
+      {
+        path: "faq",
+        Component: FaqPage,
       },
       {
         path: "*",
