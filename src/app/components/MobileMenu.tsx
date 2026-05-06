@@ -20,6 +20,8 @@ const boardsLinks = [
   "Distribution of directors per Company",
   "Distribution of female directors per Company",
   "Directorships by type and gender",
+  "Distribution of directorships per person",
+  "Distribution of INEDs per Company",
   "Distribution of INEDs per person",
   "Directorships per person",
   "Age distribution of directors",

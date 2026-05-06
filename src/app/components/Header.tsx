@@ -217,7 +217,7 @@ export function Header({
                         {/* Column 1: Board Composition & Analysis */}
                         <div>
                           <ul className="space-y-3.5">
-                            {["Board composition per Company", "Distribution of directors per Company", "Distribution of female directors per Company", "Directorships by type and gender", "Distribution of INEDs per person"].map(link => (
+                            {["Board composition per Company", "Distribution of directors per Company", "Distribution of female directors per Company", "Directorships by type and gender"].map(link => (
                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                             ))}
                           </ul>
@@ -226,11 +226,19 @@ export function Header({
                         {/* Column 2: Director Information */}
                         <div>
                           <ul className="space-y-3.5">
-                            {["Directorships per person", "Age distribution of directors", "Latest HK-listed directors", "Webb-site League Table of directors"].map(link => (
+                            {["Distribution of directorships per person", "Distribution of INEDs per Company", "Distribution of INEDs per person", "Directorships per person"].map(link => (
                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                             ))}
                           </ul>
                         </div>
+                        {/* Column 2: Director Information */}
+                        <div>
+                          <ul className="space-y-3.5">
+                            {["Age distribution of directors", "Latest HK-listed directors", "Webb-site League Table of directors"].map(link => (
+                              <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                            ))}
+                          </ul>
+                        </div>                        
                        </div>
                     )}
 

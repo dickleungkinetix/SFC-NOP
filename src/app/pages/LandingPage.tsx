@@ -224,6 +224,8 @@ const cards = [
     links: [
       "League Table of advisers",
       "Latest changes in SFC licensees",
+      "League Table of advisers",
+      "Change of auditors of current HK-listed companies",
     ],
     href: "/corporation/0001",
   },
