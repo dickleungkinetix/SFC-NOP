@@ -478,27 +478,8 @@ export default function Corporation0001() {
                    </div>
                  </div>
 
-                  {/* Webb-site Governance Rating Section */}
-                  <div className="mb-8">
-                    <h2 className="text-black font-bold text-base mb-4">Webb-site Governance Rating</h2>
-                    <p className="text-sm text-gray-700 mb-4">Log in to add your anonymous rating. Webb-site users rate this organisation as follows:</p>
-                   <div className="mb-5 overflow-x-auto">
-                     <table className="w-full text-sm border border-gray-200">
-                       <thead>
-                         <tr className="border-b border-gray-200 bg-gray-50">
-                           <th className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">Users</th>
-                           <th className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">Average (0-5)</th>
-                         </tr>
-                       </thead>
-                       <tbody>
-                         <tr className="border-b border-gray-100">
-                           <td className="py-3 px-3 text-gray-700 border-r border-gray-100">0</td>
-                           <td className="py-3 px-3 text-gray-700 border-r border-gray-100">N/A</td>
-                         </tr>
-                       </tbody>
-                     </table>
-                   </div>
-                 </div>
+
+                 <div class="mb-8"><h2 class="text-black font-bold text-base mb-4">SFC Governance Rating</h2><div class="mb-5 overflow-x-auto"><table class="w-full text-sm border border-gray-200"><thead><tr class="border-b border-gray-200 bg-gray-50"><th class="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">Place</th><th class="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">ID</th></tr></thead><tbody><tr class="border-b border-gray-100"><td class="py-3 px-3 text-gray-700 border-r border-gray-100">Hong Kong</td><td class="py-3 px-3 text-gray-700 border-r border-gray-100">64244028</td></tr></tbody></table></div></div>
 
                   {/* Reorganised from Section */}
                   <div className="mb-8">
@@ -522,6 +503,9 @@ export default function Corporation0001() {
                      </table>
                    </div>
                  </div>
+
+
+
 
                   {/* HK-listed equities Section */}
                   <div className="mb-8">
@@ -550,6 +534,8 @@ export default function Corporation0001() {
                      </table>
                    </div>
                  </div>
+
+
 
                   {/* Listed debt and preference shares Section */}
                   <div className="mb-8">
