@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, Search } from "lucide-react";
 import { Link, useNavigate } from "react-router";
-import { SFCLogo } from "./SFCLogo";
+import sfcLogoPng from "../../assets/SFC_Logo.png";
 import { MobileMenu } from "./MobileMenu";
 
 const navItems = [
@@ -66,7 +66,15 @@ export function Header({
         <div className="flex items-center justify-between px-4 lg:px-8 py-2 lg:py-3 gap-3">
           {/* Logo */}
           <Link to="/" className="shrink-0">
-            <SFCLogo width={108} />
+            <img
+              src={sfcLogoPng}
+              alt="SFC"
+              width={108}
+              height={55}
+              className="shrink-0"
+              style={{ objectFit: "contain" }}
+              loading="eager"
+            />
           </Link>
 
           {/* Desktop: optional search bar in header (search results page) */}
