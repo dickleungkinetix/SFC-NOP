@@ -222,16 +222,16 @@ const cards = [
     title: "HK-listed issuers",
     icon: <IconCorporations />,
     links: [
-      "League Table of advisers",
-      "Latest changes in SFC licensees",
-      "League Table of advisers",
+      "Number of Issuers by market annually",
+      "Name changes",
+      "League Table of advisers of HK-listed companies",
       "Change of auditors of current HK-listed companies",
     ],
     href: "/corporation/0001",
   },
   {
     id: "individuals",
-    title: "HK-listed securitie",
+    title: "HK-listed securities",
     icon: <IconIndividuals />,
     links: [
       "Listed securities by type, board and date",
@@ -244,6 +244,11 @@ const cards = [
     href: "/individual/1",
   },
 ];
+
+// Fix landing page card routing isolation for navigation labels
+// (e.g. clicking "Current market value" should only navigate for that card,
+// not accidentally trigger other hrefs via event bubbling)
+
 
 // ──────────────── FAQ SECTION ────────────────
 

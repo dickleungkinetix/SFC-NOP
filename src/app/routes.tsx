@@ -4,6 +4,8 @@ import LandingPage from "./pages/LandingPage";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import IndividualDetailPage from "./pages/IndividualDetailPage";
 import LicenseeCorpPage from "./pages/LicenseeCorpPage";
+import LicenseeIndividualPage from "./pages/LicenseeIndividualPage";
+import LicenseFirmPage from "./pages/LicenseFirmPage";
 import ChartPage from "./pages/ChartPage";
 import FaqPage from "./pages/FaqPage";
 import Corporation0001 from "./pages/corporation/0001/index";
@@ -33,6 +35,14 @@ export const router = createBrowserRouter([
       {
         path: "licensee-corp",
         Component: LicenseeCorpPage,
+      },
+      {
+        path: "licensee",
+        Component: LicenseeIndividualPage,
+      },
+      {
+        path: "license-firm",
+        Component: LicenseFirmPage,
       },
       {
         path: "individual/:id",
