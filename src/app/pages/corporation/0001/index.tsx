@@ -437,8 +437,6 @@ export default function Corporation0001() {
                        <div>Listed company</div>
                        <div><span className="font-semibold">Formed:</span></div>
                        <div>2014-12-11</div>
-                       <div><span className="font-semibold">Last check on companies registry:</span></div>
-                       <div>2017-03-11</div>
                        <div><span className="font-semibold">Year-end:</span></div>
                        <div>31-Dec</div>
                      </div>
