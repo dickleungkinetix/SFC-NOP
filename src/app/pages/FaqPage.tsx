@@ -56,11 +56,11 @@ const faqItems = [
   },
   {
     q: "Where is sfc Database published?",
-    a: "[Content not provided in screenshot text]",
+    a: "[Content not provided]",
   },
   {
     q: "What are sfc Governance Ratings and sfc Trust Ratings?",
-    a: "[Content not provided in screenshot text]",
+    a: "sfc Governance Ratings represent the average of the latest rating contributed by logged-in sfc users over the last year and not withdrawn. If the user does not update the rating within 1 year, then it will no longer be counted in the average. A user can change or withdraw her rating for any organisation at any time, thereby affecting the average over time. Ratings are intended to be absolute, not relative to any peer group, and not related to any market valuation of listed securities. Zero is the worst, 5 is the Best. A user can rate any organisation, including statutory bodies and private companies. sfc Trust Ratings use the same methodology but relate to people, and how well users trust this person, again on an absolute scale from 0 to 5. A person may of course be very trusted but not necessarily have any skill as an officer of a particular organisation. The rating is intended as a measure of trust, not competence, although if an incompetent person occupies a position of trust then this may to some extent be reflect in user opinions. All Governance and Trust ratings are average user opinions and not facts, and do not necessarily represent the opinions of sfc.com. No contributing users will be identified. Remember that we have no control over our users, and small samples of opinions may not be meaningful.",
   },
 ];
 
