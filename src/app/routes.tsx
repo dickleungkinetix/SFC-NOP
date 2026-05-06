@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
         Component: LicenseeIndividualPage,
       },
       {
-        path: "license-firm",
+        path: "licenses-firm",
         Component: LicenseFirmPage,
       },
       {

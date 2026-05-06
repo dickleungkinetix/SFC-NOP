@@ -234,12 +234,12 @@ const cards = [
     title: "HK-listed securities",
     icon: <IconIndividuals />,
     links: [
-      "Listed securities by type, board and date",
-      "Current market value",      
-      "Top CCASS change",
-      "CCASS concentration",
-      "CCASS Investor Participant stakes",
-      "CCASS participants and holdings",
+      { text: "Listed securities by type, board and date" },
+      { text: "Current market value", href: "/licensee" },
+      { text: "Top CCASS change", href: "/licenses-firm" },
+      { text: "CCASS concentration" },
+      { text: "CCASS Investor Participant stakes" },
+      { text: "CCASS participants and holdings" },
     ],
     href: "/individual/1",
   },
@@ -411,6 +411,20 @@ export default function LandingPage() {
               key={card.id}
               href={card.href}
               onClick={(e) => {
+                // Don't navigate if the click is on a button (custom link)
+                if ((e.target as HTMLElement)?.tagName === 'BUTTON') {
+                  e.preventDefault();
+                  return;
+                }
+                
+                // Check if click target or any parent is a button with custom navigation
+                const target = e.target as HTMLElement;
+                const button = target?.closest?.('button');
+                if (button) {
+                  e.preventDefault();
+                  return;
+                }
+                
                 if (card.href.startsWith("/")) {
                   e.preventDefault();
                   navigate(card.href);
@@ -441,13 +455,31 @@ export default function LandingPage() {
 
               {/* Links */}
               <ul className="space-y-1">
-                {card.links.map((link) => (
-                  <li key={link}>
-                    <span className="text-white underline text-xs sm:text-sm cursor-pointer hover:text-blue-200 leading-relaxed block">
-                      {link}
-                    </span>
-                  </li>
-                ))}
+                {card.links.map((link) => {
+                  const linkText = typeof link === "string" ? link : link.text;
+                  const linkHref = typeof link === "string" ? undefined : link.href;
+
+                  return (
+                    <li key={linkText}>
+                      {linkHref ? (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            navigate(linkHref);
+                          }}
+                          className="text-white underline text-xs sm:text-sm cursor-pointer hover:text-blue-200 leading-relaxed block w-full text-left p-0 bg-none border-none font-inherit"
+                        >
+                          {linkText}
+                        </button>
+                      ) : (
+                        <span className="text-white underline text-xs sm:text-sm cursor-pointer hover:text-blue-200 leading-relaxed block">
+                          {linkText}
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </a>
           ))}

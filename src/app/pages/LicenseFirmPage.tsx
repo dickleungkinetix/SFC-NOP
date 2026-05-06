@@ -11,9 +11,11 @@ interface NavNode {
 
 const sidebarTree: NavNode[] = [
   { label: "Key Data" },
-  { label: "Positions" },
+  { label: "Officers" },
+  { label: "Overlaps" },
   { label: "SFC Licenses", active: true },
-  { label: "SFC web" },
+  { label: "Listing" },
+  { label: "SFC Web" },
 ];
 
 export default function LicenseFirmPage() {
