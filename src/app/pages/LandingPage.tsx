@@ -204,19 +204,19 @@ function IconLicensee() {
 // ──────────────── CATEGORY CARDS ────────────────
 
 const cards = [
-  {
-    id: "ccass",
-    title: "HK-listed boards",
-    icon: <IconCCASS />,
-    links: [
-      "Board composition per Company",
-      "Distribution of directors per Company",
-      "Distribution of female directors per Company",
-      "Directorship by type and gender",
-      "Distribution of INEDs per Company",
-    ],
-    href: "/chart",
-  },
+   {
+     id: "ccass",
+     title: "HK-listed boards",
+     icon: <IconCCASS />,
+     links: [
+       "Board composition per Company",
+       "Distribution of directors per Company",
+       "Distribution of female directors per Company",
+       "Directorship by type and gender",
+       "Distribution of INEDs per Company",
+     ],
+     href: "/short",
+   },
   {
     id: "corporations",
     title: "HK-listed issuers",

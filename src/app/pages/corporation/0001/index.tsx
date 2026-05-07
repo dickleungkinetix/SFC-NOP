@@ -393,14 +393,19 @@ export default function Corporation0001() {
                   <ChevronDown className="w-5 h-5 text-[#008581]" />
                 </button>
               </div>
-              <div className="p-6 space-y-2">
-                {sidebarTree.map((node) => (
-                <div key={node.label} className="px-4 py-2.5 text-sm rounded-lg text-gray-600">
-                  <a href="/pages/CCASS" className="underline hover:text-[#008581]">{node.label}</a>
-                </div>
+               <div className="p-6 space-y-2">
+                 {sidebarTree.map((node) => (
+                 <div key={node.label} className="px-4 py-2.5 text-sm rounded-lg text-gray-600">
+                   <a 
+                     href={node.label === "Short" ? "/Short" : node.label === "CCASS" ? "/CCASS" : `/${node.label.replace(/\s+/g, '')}`}
+                     className="underline hover:text-[#008581]"
+                   >
+                     {node.label}
+                   </a>
+                 </div>
 
-                ))}
-              </div>
+                 ))}
+               </div>
             </aside>
 
             {/* Main content */}
@@ -533,7 +538,7 @@ export default function Corporation0001() {
                            <td className="py-3 px-3 text-gray-700 border-r border-gray-100">1972-11-01</td>
                            <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>
                            <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>                           
-                           <td className="py-3 px-3 min-w-[280px] sm:min-w-0 max-w-[300px] text-[#009ca6] underline cursor-pointer"><a href="https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=EN&market=SEHK&stockId=1&category=0" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Docs</a><a href="/buyback" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Buybacks</a><a href="/outstanding" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Outstanding</a><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Short')}>Short</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/CCASS')}>CCASS</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/TotalReturn')}>Total return</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/CompareReturn')}>Compare returns</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Prices')}>Prices</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Events')}>Events</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Dealings')}>Dealings</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Quote')}>Quote</button></td>
+                           <td className="py-3 px-3 min-w-[280px] sm:min-w-0 max-w-[300px] text-[#009ca6] underline cursor-pointer"><a href="https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=EN&market=SEHK&stockId=1&category=0" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Docs</a><a href="/buyback" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Buybacks</a><a href="/outstanding" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Outstanding</a><a href="/Short" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Short</a><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/CCASS')}>CCASS</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/TotalReturn')}>Total return</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/CompareReturn')}>Compare returns</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Prices')}>Prices</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Events')}>Events</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Dealings')}>Dealings</button><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" onClick={() => navigate('/Quote')}>Quote</button></td>
                          </tr>
                        </tbody>
                      </table>
@@ -565,12 +570,9 @@ export default function Corporation0001() {
                      </table>
                    </div>
 
-                 </div>
-              
+                  </div>
 
-
-
-                  {/* Listed debt and preference shares Section */}
+                   {/* Listed debt and preference shares Section */}
                   <div className="mb-8">
                     <h2 className="text-black font-bold text-base mb-4">Listed debt and preference shares</h2>
                     <p className="text-sm text-gray-700 mb-4">Hit the stock code for details. * = floating</p>

@@ -58,10 +58,10 @@ export const router = createBrowserRouter([
         path: "individual/:id",
         Component: IndividualDetailPage,
       },
-      {
-        path: "chart",
-        Component: ChartPage,
-      },
+       {
+         path: "short",
+         Component: ChartPage,
+       },
       {
         path: "faq",
         Component: FaqPage,

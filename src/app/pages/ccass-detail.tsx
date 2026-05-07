@@ -173,7 +173,7 @@ export default function CCASS() {
                 {/* Top Navigation Tabs */}
                 <div className="mb-6 overflow-x-auto">
                   <div className="flex gap-2 bg-gray-100 p-2 rounded-lg w-fit min-w-full">
-                    <button className="px-4 py-1.5 bg-[#2e7d32] text-white text-xs font-semibold rounded hover:bg-[#266d2b] transition-colors">Holdings</button>
+                    <button className="px-4 py-1.5 bg-[#128c88] text-white text-xs font-semibold rounded hover:bg-[#0a7472] transition-colors">Holdings</button>
                     <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Changes</button>
                     <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Big changes</button>
                     <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Concentration</button>
