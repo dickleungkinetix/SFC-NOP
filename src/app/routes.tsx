@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import { Root } from "./Root";
 import LandingPage from "./pages/LandingPage";
+import BuybackPage from "./pages/buyback";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import IndividualDetailPage from "./pages/IndividualDetailPage";
 import LicenseeCorpPage from "./pages/LicenseeCorpPage";
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: LandingPage,
+      },
+      {
+        path: "buyback",
+        Component: BuybackPage,
       },
       {
         path: "search",
