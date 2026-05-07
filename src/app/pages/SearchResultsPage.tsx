@@ -56,7 +56,7 @@ function RadioOption({
 export default function SearchResultsPage() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
-  const [searchText, setSearchText] = useState(params.get("q") || "HSBC");
+  const [searchText, setSearchText] = useState(params.get("q") || "CK Hutchison");
   const [searchFilter, setSearchFilter] = useState("Stock Code");
 
   const handleSearchSubmit = () => {
