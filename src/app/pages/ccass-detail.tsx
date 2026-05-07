@@ -35,7 +35,7 @@ export default function CCASS() {
             <aside className="hidden lg:block lg:sticky lg:top-[130px] lg:w-52 lg:shrink-0 bg-white rounded-xl p-4 h-fit">
               <div className="space-y-2">
                 <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
-                  <span className="text-sm text-[#009ca6]">Key Data</span>
+                  <span className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600">Key Data</span>
                 </div>
                 <div className="flex items-center justify-between py-1.5 cursor-pointer hover:text-[#008581] transition-colors text-gray-600" style={{ paddingLeft: '8px' }}>
                   <span className="text-sm">Officers</span>

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import { Root } from "./Root";
 import LandingPage from "./pages/LandingPage";
 import BuybackPage from "./pages/buyback";
+import OutstandingPage from "./pages/outstanding";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import IndividualDetailPage from "./pages/IndividualDetailPage";
 import LicenseeCorpPage from "./pages/LicenseeCorpPage";
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "buyback",
         Component: BuybackPage,
+      },
+      {
+        path: "outstanding",
+        Component: OutstandingPage,
       },
       {
         path: "search",
