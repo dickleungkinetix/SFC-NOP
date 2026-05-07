@@ -484,17 +484,18 @@ function ShortPositionsChart() {
           aria-label="Navigator"
         >
           {/* Range visualization bar */}
-          <div className="flex-1 relative h-6 bg-gray-200 rounded border border-gray-300 flex items-center overflow-hidden">
+          <div className="flex-1 relative h-6 bg-gray-200 rounded border border-gray-300 flex items-center overflow-visible">
             {/* Selected range indicator */}
             <div 
               className="absolute h-full bg-blue-100 border-l-2 border-r-2 border-blue-400"
               style={{
                 left: `${zoomRange[0]}%`,
                 right: `${100 - zoomRange[1]}%`,
+                pointerEvents: 'none' as any,
               }}
             />
             
-            {/* Left slider */}
+            {/* Left slider input */}
             <input 
               type="range" 
               role="presentation"
@@ -508,11 +509,14 @@ function ShortPositionsChart() {
                 const newMin = Math.min(parseFloat(e.target.value), zoomRange[1]);
                 setZoomRange([newMin, zoomRange[1]]);
               }}
-              className="absolute w-full h-full opacity-0 cursor-ew-resize z-5"
-              style={{ pointerEvents: 'auto' }}
+              className="absolute w-full h-full opacity-0 cursor-pointer"
+              style={{ 
+                pointerEvents: 'auto',
+                zIndex: zoomRange[0] > zoomRange[1] - 5 ? 5 : 3,
+              }}
             />
             
-            {/* Right slider */}
+            {/* Right slider input */}
             <input 
               type="range" 
               role="presentation"
@@ -526,13 +530,16 @@ function ShortPositionsChart() {
                 const newMax = Math.max(parseFloat(e.target.value), zoomRange[0]);
                 setZoomRange([zoomRange[0], newMax]);
               }}
-              className="absolute w-full h-full opacity-0 cursor-ew-resize z-5"
-              style={{ pointerEvents: 'auto' }}
+              className="absolute w-full h-full opacity-0 cursor-pointer"
+              style={{ 
+                pointerEvents: 'auto',
+                zIndex: 4,
+              }}
             />
 
             {/* Left handle */}
             <div 
-              className="absolute top-1/2 w-3 h-5 bg-gray-300 border border-gray-400 rounded-sm cursor-ew-resize shadow-sm hover:bg-gray-400 transition-colors"
+              className="absolute top-1/2 w-4 h-6 bg-gray-300 border border-gray-400 rounded-sm shadow-sm hover:bg-gray-400 transition-colors"
               style={{
                 left: `${zoomRange[0]}%`,
                 transform: 'translate(-50%, -50%)',
@@ -542,7 +549,7 @@ function ShortPositionsChart() {
 
             {/* Right handle */}
             <div 
-              className="absolute top-1/2 w-3 h-5 bg-gray-300 border border-gray-400 rounded-sm cursor-ew-resize shadow-sm hover:bg-gray-400 transition-colors"
+              className="absolute top-1/2 w-4 h-6 bg-gray-300 border border-gray-400 rounded-sm shadow-sm hover:bg-gray-400 transition-colors"
               style={{
                 left: `${zoomRange[1]}%`,
                 transform: 'translate(-50%, -50%)',
