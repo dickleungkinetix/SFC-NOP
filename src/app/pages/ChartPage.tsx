@@ -495,45 +495,45 @@ function ShortPositionsChart() {
               }}
             />
             
-            {/* Left slider input */}
-            <input 
-              type="range" 
-              role="presentation"
-              aria-label="Minimum"
-              tabIndex={0}
-              step="0.1"
-              min="0"
-              max="100"
-              value={zoomRange[0]}
-              onChange={(e) => {
-                const newMin = Math.min(parseFloat(e.target.value), zoomRange[1]);
-                setZoomRange([newMin, zoomRange[1]]);
-              }}
-              className="absolute w-full h-full opacity-0 cursor-pointer"
-              style={{ 
-                pointerEvents: 'auto',
-                zIndex: zoomRange[0] > zoomRange[1] - 5 ? 5 : 3,
-              }}
-            />
+             {/* Left slider input */}
+             <input 
+               type="range" 
+               role="presentation"
+               aria-label="Minimum"
+               tabIndex={0}
+               step="0.1"
+               min="0"
+               max="100"
+               value={zoomRange[0]}
+               onChange={(e) => {
+                 const newMin = parseFloat(e.target.value);
+                 setZoomRange([newMin, zoomRange[1]]);
+               }}
+               className="absolute w-full h-full opacity-0 cursor-pointer"
+               style={{ 
+                 pointerEvents: 'auto',
+                 zIndex: zoomRange[0] > 50 ? 4 : 5,
+               }}
+             />
             
             {/* Right slider input */}
             <input 
               type="range" 
               role="presentation"
               aria-label="Maximum"
-              tabIndex={-1}
+              tabIndex={0}
               step="0.1"
               min="0"
               max="100"
               value={zoomRange[1]}
               onChange={(e) => {
-                const newMax = Math.max(parseFloat(e.target.value), zoomRange[0]);
+                const newMax = parseFloat(e.target.value);
                 setZoomRange([zoomRange[0], newMax]);
               }}
               className="absolute w-full h-full opacity-0 cursor-pointer"
               style={{ 
                 pointerEvents: 'auto',
-                zIndex: 4,
+                zIndex: zoomRange[0] > 50 ? 5 : 4,
               }}
             />
 
