@@ -234,7 +234,7 @@ export function Header({
                         {/* Column 2: Director Information */}
                         <div>
                           <ul className="space-y-3.5">
-                            {["Age distribution of directors", "Latest HK-listed directors", "Webb-site League Table of directors"].map(link => (
+                            {["Age distribution of directors", "Latest HK-listed directors", "League Table of directors"].map(link => (
                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                             ))}
                           </ul>
@@ -247,7 +247,7 @@ export function Header({
                          {/* Column 1: Regulatory & Market Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Stock Exchange listed issuer regulatory teams", "Number of issuers by market annually", "Domicile", "Domicile changes (including unlisted companies)", "Name changes"].map(link => (
+                             {["Stock Exchange listed issuer regulatory teams", "Number of issuers by market annually", "Domicile", "Domicile changes", "Name changes"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -256,7 +256,7 @@ export function Header({
                          {/* Column 2: Financial & Company Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Financial year-end", "Reporting speed", "Companies' web sites"].map(link => (
+                             {["Financial year-end", "Reporting speed", "Companies' websites"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -287,7 +287,7 @@ export function Header({
                          {/* Column 3: CCASS Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["CCASS concentration analysis", "CCASS Investor Participant stakes", "CCASS participants and holdings"].map(link => (
+                             {["CCASS concentration", "CCASS Investor Participant stakes", "CCASS participants and holdings"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -309,7 +309,7 @@ export function Header({
                          {/* Column 1: Advisors Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Webb-site League Table of advisers", "Change of auditors of current HK-listed companies"].map(link => (
+                             {["League Table of advisers", "Change of auditors of current HK-listed companies"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -317,7 +317,7 @@ export function Header({
                         </div>
                      )}
 
-                    {item.label === "SFC licensees analysis" && (
+                    {item.label === "SFC licensees" && (
                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 text-left">
                          {/* Column 1: SFC Licensees Information */}
                          <div>
