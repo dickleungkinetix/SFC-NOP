@@ -708,7 +708,7 @@ export default function ChartPage() {
                       border: "1px solid #a5d6a7",
                     }}
                   >
-                    Corporation
+                    Short 
                   </span>
                 </div>
 
