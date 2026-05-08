@@ -9,7 +9,7 @@ const navItems = [
   { label: "HK-listed issuers", color: "#b13bb8" },
   { label: "HK-listed securities", color: "#7fd084" },
   { label: "Advisors to HK-listed issuers", color: "#009bff" },
-  { label: "SFC licensees analysis", color: "#ffb81d" },
+  { label: "SFC licensees", color: "#ffb81d" },
 ];
 
 interface HeaderProps {
@@ -317,18 +317,18 @@ export function Header({
                         </div>
                      )}
 
-                    {item.label === "SFC licensees" && (
-                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 text-left">
-                         {/* Column 1: SFC Licensees Information */}
-                         <div>
-                           <ul className="space-y-3.5">
-                             {["League tables of SFC licensees", "Latest changes in SFC licensees", "Historic total of SFC licensees"].map(link => (
-                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                             ))}
-                           </ul>
+                     {item.label === "SFC licensees" && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 text-left">
+                          {/* Column 1: SFC Licensees Information */}
+                          <div>
+                            <ul className="space-y-3.5">
+                              {["League tables of SFC licensees", "Latest changes in SFC licensees", "Historic total of SFC licensees"].map(link => (
+                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                              ))}
+                            </ul>
+                          </div>
                          </div>
-                        </div>
-                     )}
+                      )}
                     </div>
                   </div>
                 )}
