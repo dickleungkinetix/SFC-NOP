@@ -411,7 +411,7 @@ export default function BuybackPage() {
                        border: "1px solid #a5d6a7",
                      }}
                    >
-                     Buyback
+                     Buybacks
                    </span>
                  </div>
 
