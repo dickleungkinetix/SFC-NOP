@@ -12,7 +12,7 @@ interface NavNode {
 const sidebarTree: NavNode[] = [
   { label: "Key Data"},
   { label: "Positions" },
-  { label: "SFC Licenses", active: true  },
+  { label: "SFC Licensees", active: true  },
   { label: "SFC web" },
 ];
 
