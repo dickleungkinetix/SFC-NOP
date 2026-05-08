@@ -158,7 +158,7 @@ export default function LicenseFirmPage() {
                     fontWeight: "bold",
                   }}
                 >
-                  HSBC BROKING FUTURES (HONG KONG) LIMITED 滙豐金融期貨(香港)有限公司
+                  HSBC BROKING FUTURES (HONG KONG) LTD 滙豐金融期貨(香港)有限公司
                 </h1>
 
                 <div className="mt-4">

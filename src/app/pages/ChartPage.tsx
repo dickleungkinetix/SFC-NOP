@@ -84,7 +84,7 @@ function SidebarItem({ node, depth = 0 }: { node: NavNode; depth?: number }) {
   );
 }
 
-// ──────────────── CANDLESTICK CHART WITH CROSSHAIR & TOOLTIP ────────────────
+// ──────────────── LINE CHART WITH CROSSHAIR & TOOLTIP ────────────────
 
 interface CandleData {
   date: string;
@@ -104,7 +104,7 @@ interface TooltipState {
   volume: string;
 }
 
-function CandlestickChartWithTooltip({ data }: { data: CandleData[] }) {
+function LineChartWithTooltip({ data }: { data: CandleData[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [tooltip, setTooltip] = useState<TooltipState>({
@@ -171,29 +171,33 @@ function CandlestickChartWithTooltip({ data }: { data: CandleData[] }) {
       ctx.fillText(price.toFixed(2), padding.left - 10, y + 4);
     }
 
-    // Draw candlesticks
-    const candleWidth = Math.max(1, chartWidth / (data.length * 1.5));
+    // Draw line chart
+    ctx.strokeStyle = "#009ca6";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    
     data.forEach((candle, idx) => {
       const x = scaleX(idx);
-      const openY = scaleY(candle.open);
-      const closeY = scaleY(candle.close);
-      const highY = scaleY(candle.high);
-      const lowY = scaleY(candle.low);
-      const isUp = candle.close >= candle.open;
-
-      // Draw wick
-      ctx.strokeStyle = isUp ? "#26a69a" : "#ef5350";
-      ctx.lineWidth = 1;
+      const y = scaleY(candle.close);
+      
+      if (idx === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+    });
+    
+    ctx.stroke();
+    
+    // Draw data points
+    data.forEach((candle, idx) => {
+      const x = scaleX(idx);
+      const y = scaleY(candle.close);
+      
+      ctx.fillStyle = "#009ca6";
       ctx.beginPath();
-      ctx.moveTo(x, highY);
-      ctx.lineTo(x, lowY);
-      ctx.stroke();
-
-      // Draw body
-      ctx.fillStyle = isUp ? "#26a69a" : "#ef5350";
-      const bodyTop = Math.min(openY, closeY);
-      const bodyHeight = Math.abs(closeY - openY) || 1;
-      ctx.fillRect(x - candleWidth / 2, bodyTop, candleWidth, bodyHeight);
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fill();
     });
 
     // Draw axes
@@ -468,10 +472,10 @@ function ShortPositionsChart() {
         </p>
       </div>
 
-      {/* Chart Container - Custom Candlestick with Crosshair and Tooltip */}
+      {/* Chart Container - Line Chart with Crosshair and Tooltip */}
       <div style={{ height: "480px", width: "100%", marginBottom: "20px", background: "#fff", borderRadius: "4px", position: "relative", overflow: "hidden" }}>
         {displayedChartData.length > 0 && (
-          <CandlestickChartWithTooltip data={displayedChartData} />
+          <LineChartWithTooltip data={displayedChartData} />
         )}
       </div>
 
