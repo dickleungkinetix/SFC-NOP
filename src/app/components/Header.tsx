@@ -247,7 +247,7 @@ export function Header({
                          {/* Column 1: Regulatory & Market Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Number of issuers by market annually", "Domicile", "Domicile changes", "Name changes"].map(link => (
+                             {["Number of issuers by market annually", "Domicile", "Domicile changes", "Name changes", "List of issuers transferred from GEM to Main Board"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -269,7 +269,8 @@ export function Header({
                          {/* Column 1: Listed Securities Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Listed securities by type, board and date", "Delisted securities by type, board and date", "Current market values", "Historic market values", "List of issuers transferred from GEM to Main Board"].map(link => (
+                             {["Listed securities by type, board and date", "Delisted securities by type, board and date", "Current market values", "Historic market values","Share buybacks"
+].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -278,7 +279,7 @@ export function Header({
                          {/* Column 2: Trading & Disclosure Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Share buybacks", "Latest director dealings", "Short positions disclosed to SFC", "Rights issues and open offers", "Splits, consolidations and bonus issues", "Distribution of stocks by board lot"].map(link => (
+                             {["Latest director dealings", "Short positions disclosed to SFC", "Rights issues and open offers", "Splits, consolidations and bonus issues", "Distribution of stocks by board lot"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
