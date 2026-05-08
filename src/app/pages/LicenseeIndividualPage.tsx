@@ -19,6 +19,7 @@ const sidebarTree: NavNode[] = [
 export default function LicenseeIndividualPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarTab, setSidebarTab] = useState<"Current" | "History">("Current");
+  const [searchValue, setSearchValue] = useState("");
 
   const licenseeRows = useMemo(
     () => [
@@ -91,7 +92,11 @@ export default function LicenseeIndividualPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      <Header showSearch={false} />
+      <Header 
+        showSearch={true} 
+        searchValue={searchValue}
+        onSearchChange={setSearchValue}
+      />
 
       <div className="relative flex-1">
         <img
