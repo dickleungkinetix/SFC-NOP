@@ -322,7 +322,7 @@ export default function LandingPage() {
   }, []);
 
   const handleSearch = () => {
-    const query = searchText.trim() || "HSBC";
+    const query = searchText.trim();
     navigate(`/search?q=${encodeURIComponent(query)}`);
   };
 
