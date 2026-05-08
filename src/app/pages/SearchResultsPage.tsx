@@ -57,7 +57,7 @@ export default function SearchResultsPage() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState(params.get("q") || "CK Hutchison");
-  const [searchFilter, setSearchFilter] = useState("Stock Code");
+  const [searchFilter, setSearchFilter] = useState("Corporations");
 
   const handleSearchSubmit = () => {
     navigate(`/search?q=${encodeURIComponent(searchText)}`);
