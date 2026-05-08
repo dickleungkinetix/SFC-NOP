@@ -724,33 +724,45 @@ export default function ChartPage() {
                   CK Hutchison Holdings Limited: 0 HKD
                 </h1>
 
-                {/* Listings table */}
-                <div className="mb-5 overflow-x-auto">
-                  <table className="w-full text-sm border border-gray-200">
-                    <thead>
-                      <tr className="border-b border-gray-200 bg-gray-50">
-                        {["EXCHANGE", "CODE", "LISTED", "LAST TRADE", "DELISTED", ""].map((col) => (
-                          <th
-                            key={col}
-                            className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0"
-                          >
-                            {col}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border-b border-gray-100">
-                        <td className="py-3 px-3 text-gray-700 border-r border-gray-100">HK-Main</td>
-                        <td className="py-3 px-3 text-gray-700 border-r border-gray-100">00001</td>
-                        <td className="py-3 px-3 text-gray-700 border-r border-gray-100">1972-11-01</td>
-                        <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>
-                        <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>                        
-                        <td className="py-3 px-3 text-[#009ca6] underline cursor-pointer"><button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Docs</button></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                 {/* Listings table */}
+                 <div className="mb-5 overflow-x-auto">
+                   <table className="w-full text-sm border border-gray-200">
+                     <thead>
+                       <tr className="border-b border-gray-200 bg-gray-50">
+                         {["Exchange", "Code", "Listed", "Last trade", "Delisted", ""].map((col) => (
+                           <th
+                             key={col}
+                             className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0"
+                           >
+                             {col}
+                           </th>
+                         ))}
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr className="border-b border-gray-100">
+                         <td className="py-3 px-3 text-gray-700 border-r border-gray-100">HK Main</td>
+                         <td className="py-3 px-3 text-gray-700 border-r border-gray-100">00001</td>
+                         <td className="py-3 px-3 text-gray-700 border-r border-gray-100">1972-11-01</td>
+                         <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>
+                         <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>
+                         <td className="py-3 px-4 min-w-[280px] sm:min-w-0 max-w-[300px] text-[#009ca6] underline cursor-pointer">
+                           <a href="https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=EN&market=SEHK&stockId=1&category=0" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Docs</a>
+                           <a href="/buyback" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Buybacks</a>
+                           <a href="/outstanding" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Outstanding</a>
+                           <a href="/Short" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-[#128c88] text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Short</a>
+                           <a href="/CCASS" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">CCASS</a>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Total return</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Compare returns</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Prices</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Events</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Dealings</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Quote</button>
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
 
                 {/* Stock code input */}
                 <div className="flex items-center gap-3 mb-5">

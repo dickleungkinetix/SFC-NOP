@@ -136,31 +136,43 @@ export default function CCASS() {
                   CK Hutchison Holdings Limited: O HKD
                 </h1>
 
-                {/* Stock Exchange Table */}
-                <div className="mb-8 overflow-x-auto">
-                  <table className="w-full text-sm border border-gray-300">
-                    <thead>
-                      <tr className="border-b border-gray-300 bg-gray-100">
-                        <th className="text-left py-2 px-3 text-xs font-bold text-gray-800 border-r border-gray-300">Exchange</th>
-                        <th className="text-left py-2 px-3 text-xs font-bold text-gray-800 border-r border-gray-300">Code</th>
-                        <th className="text-left py-2 px-3 text-xs font-bold text-gray-800 border-r border-gray-300">Listed</th>
-                        <th className="text-left py-2 px-3 text-xs font-bold text-gray-800 border-r border-gray-300">Last trade</th>
-                        <th className="text-left py-2 px-3 text-xs font-bold text-gray-800 border-r border-gray-300">Delisted</th>
-                        <th className="text-left py-2 px-3 text-xs font-bold text-gray-800"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border-b border-gray-300">
-                        <td className="py-2 px-3 text-gray-700 border-r border-gray-300">HK Main</td>
-                        <td className="py-2 px-3 text-gray-700 border-r border-gray-300">00001</td>
-                        <td className="py-2 px-3 text-gray-700 border-r border-gray-300">1972-11-01</td>
-                        <td className="py-2 px-3 text-gray-400 border-r border-gray-300">–</td>
-                        <td className="py-2 px-3 text-gray-400 border-r border-gray-300"></td>
-                        <td className="py-2 px-3"><button className="px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Docs</button></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                 {/* Stock Exchange Table */}
+                 <div className="mb-8 overflow-x-auto">
+                   <table className="w-full text-sm border border-gray-200">
+                     <thead>
+                       <tr className="border-b border-gray-200 bg-gray-50">
+                         <th className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">Exchange</th>
+                         <th className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">Code</th>
+                         <th className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">Listed</th>
+                         <th className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">Last trade</th>
+                         <th className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0">Delisted</th>
+                         <th className="text-left py-2 px-3 text-xs text-gray-500 font-semibold tracking-wide whitespace-nowrap border-r border-gray-200 last:border-r-0"></th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr className="border-b border-gray-100">
+                         <td className="py-3 px-3 text-gray-700 border-r border-gray-100">HK Main</td>
+                         <td className="py-3 px-3 text-gray-700 border-r border-gray-100">00001</td>
+                         <td className="py-3 px-3 text-gray-700 border-r border-gray-100">1972-11-01</td>
+                         <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>
+                         <td className="py-3 px-3 text-gray-400 border-r border-gray-100">–</td>
+                         <td className="py-3 px-4 min-w-[280px] sm:min-w-0 max-w-[300px] text-[#009ca6] underline cursor-pointer">
+                           <a href="https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=EN&market=SEHK&stockId=1&category=0" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Docs</a>
+                           <a href="/buyback" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Buybacks</a>
+                           <a href="/outstanding" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Outstanding</a>
+                           <a href="/Short" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">Short</a>
+                           <a href="/CCASS" target="_blank" rel="noreferrer" className="mx-2 mt-1 mb-1 px-3 py-1 bg-[#128c88] text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center">CCASS</a>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Total return</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Compare returns</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Prices</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Events</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Dealings</button>
+                           <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Quote</button>
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
 
                 {/* Header Info */}
                 <div className="mb-8">
