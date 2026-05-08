@@ -191,7 +191,7 @@ export default function LicenseeIndividualPage() {
                       border: "1px solid #008581",
                     }}
                   >
-                    Licensee
+                    Licensess
                   </span>
                 </div>
 
