@@ -193,54 +193,12 @@ export default function OutstandingPage() {
                            >
                              CCASS
                            </a>
-                           <a
-                             href="/TotalReturn"
-                             target="_blank"
-                             rel="noreferrer"
-                             className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center"
-                           >
-                             Total return
-                           </a>
-                           <a
-                             href="/CompareReturn"
-                             target="_blank"
-                             rel="noreferrer"
-                             className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center"
-                           >
-                             Compare returns
-                           </a>
-                           <a
-                             href="/Prices"
-                             target="_blank"
-                             rel="noreferrer"
-                             className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center"
-                           >
-                             Prices
-                           </a>
-                           <a
-                             href="/Events"
-                             target="_blank"
-                             rel="noreferrer"
-                             className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center"
-                           >
-                             Events
-                           </a>
-                           <a
-                             href="/Dealings"
-                             target="_blank"
-                             rel="noreferrer"
-                             className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center"
-                           >
-                             Dealings
-                           </a>
-                           <a
-                             href="/Quote"
-                             target="_blank"
-                             rel="noreferrer"
-                             className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors inline-flex items-center justify-center"
-                           >
-                             Quote
-                           </a>
+                            <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Total return</button>
+                            <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" >Compare returns</button>
+                            <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" >Prices</button>
+                            <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" >Events</button>
+                            <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" >Dealings</button>
+                            <button className="mx-2 mt-1 mb-1 px-3 py-1 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors" >Quote</button>
                         </td>
                       </tr>
                     </tbody>
