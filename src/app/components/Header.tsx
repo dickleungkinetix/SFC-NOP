@@ -247,7 +247,7 @@ export function Header({
                          {/* Column 1: Regulatory & Market Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Stock Exchange listed issuer regulatory teams", "Number of issuers by market annually", "Domicile", "Domicile changes", "Name changes"].map(link => (
+                             {["Number of issuers by market annually", "Domicile", "Domicile changes", "Name changes"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -256,7 +256,7 @@ export function Header({
                          {/* Column 2: Financial & Company Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Financial year-end", "Reporting speed", "Companies' websites"].map(link => (
+                             {["Financial year-end", "Reporting speed", "Companies' websites", "Stock Exchange listed issuer regulatory teams"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -269,7 +269,7 @@ export function Header({
                          {/* Column 1: Listed Securities Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Listed securities by type, board and date", "Delisted securities by type, board and date", "List of issuers transferred from GEM to Main Board", "Current market values", "Historic market values", "Share buybacks"].map(link => (
+                             {["Listed securities by type, board and date", "Delisted securities by type, board and date", "Current market values", "Historic market values", "List of issuers transferred from GEM to Main Board"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -278,7 +278,7 @@ export function Header({
                          {/* Column 2: Trading & Disclosure Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["Latest director dealings", "Short positions disclosed to SFC", "Rights issues and open offers", "Splits, consolidations and bonus issues", "Distribution of stocks by board lot", "Top CCASS changes"].map(link => (
+                             {["Share buybacks", "Latest director dealings", "Short positions disclosed to SFC", "Rights issues and open offers", "Splits, consolidations and bonus issues", "Distribution of stocks by board lot"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
@@ -287,7 +287,7 @@ export function Header({
                          {/* Column 3: CCASS Information */}
                          <div>
                            <ul className="space-y-3.5">
-                             {["CCASS concentration", "CCASS Investor Participant stakes", "CCASS participants and holdings"].map(link => (
+                             {["Top CCASS changes", "CCASS concentration", "CCASS Investor Participant stakes", "CCASS participants and holdings"].map(link => (
                                <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
                              ))}
                            </ul>
