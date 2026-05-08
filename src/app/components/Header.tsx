@@ -243,26 +243,92 @@ export function Header({
                     )}
 
                     {item.label === "HK-listed issuers" && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-12 gap-y-10 text-left">
-                        {/* Column 1: Regulatory & Market Information */}
-                        <div>
-                          <ul className="space-y-3.5">
-                            {["Stock Exchange listed issuer regulatory teams", "Number of issuers by market annually", "Domicile", "Domicile changes (including unlisted companies)", "Name changes"].map(link => (
-                              <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                            ))}
-                          </ul>
-                        </div>
+                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-12 gap-y-10 text-left">
+                         {/* Column 1: Regulatory & Market Information */}
+                         <div>
+                           <ul className="space-y-3.5">
+                             {["Stock Exchange listed issuer regulatory teams", "Number of issuers by market annually", "Domicile", "Domicile changes (including unlisted companies)", "Name changes"].map(link => (
+                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                             ))}
+                           </ul>
+                         </div>
 
-                        {/* Column 2: Financial & Company Information */}
-                        <div>
-                          <ul className="space-y-3.5">
-                            {["Financial year-end", "Reporting speed", "Companies' web sites"].map(link => (
-                              <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
-                            ))}
-                          </ul>
+                         {/* Column 2: Financial & Company Information */}
+                         <div>
+                           <ul className="space-y-3.5">
+                             {["Financial year-end", "Reporting speed", "Companies' web sites"].map(link => (
+                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                             ))}
+                           </ul>
+                         </div>
                         </div>
-                       </div>
-                    )}
+                     )}
+
+                    {item.label === "HK-listed securities" && (
+                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-10 text-left">
+                         {/* Column 1: Listed Securities Information */}
+                         <div>
+                           <ul className="space-y-3.5">
+                             {["Listed securities by type, board and date", "Delisted securities by type, board and date", "List of issuers transferred from GEM to Main Board", "Current market values", "Historic market values", "Share buybacks"].map(link => (
+                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                             ))}
+                           </ul>
+                         </div>
+
+                         {/* Column 2: Trading & Disclosure Information */}
+                         <div>
+                           <ul className="space-y-3.5">
+                             {["Latest director dealings", "Short positions disclosed to SFC", "Rights issues and open offers", "Splits, consolidations and bonus issues", "Distribution of stocks by board lot", "Top CCASS changes"].map(link => (
+                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                             ))}
+                           </ul>
+                         </div>
+
+                         {/* Column 3: CCASS Information */}
+                         <div>
+                           <ul className="space-y-3.5">
+                             {["CCASS concentration analysis", "CCASS Investor Participant stakes", "CCASS participants and holdings"].map(link => (
+                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                             ))}
+                           </ul>
+                         </div>
+
+                         {/* Column 4: Connect Market Information */}
+                         <div>
+                           <ul className="space-y-3.5">
+                             {["Shanghai-HK connect southbound positions", "Shenzhen-HK connect southbound positions"].map(link => (
+                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                             ))}
+                           </ul>
+                         </div>
+                        </div>
+                     )}
+
+                    {item.label === "Advisors to HK-listed issuers" && (
+                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 text-left">
+                         {/* Column 1: Advisors Information */}
+                         <div>
+                           <ul className="space-y-3.5">
+                             {["Webb-site League Table of advisers", "Change of auditors of current HK-listed companies"].map(link => (
+                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                             ))}
+                           </ul>
+                         </div>
+                        </div>
+                     )}
+
+                    {item.label === "SFC licensees analysis" && (
+                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 text-left">
+                         {/* Column 1: SFC Licensees Information */}
+                         <div>
+                           <ul className="space-y-3.5">
+                             {["League tables of SFC licensees", "Latest changes in SFC licensees", "Historic total of SFC licensees"].map(link => (
+                               <li key={link}><a href="#" className="text-gray-500 hover:text-blue-600 text-[13px] leading-tight block transition-colors whitespace-normal">{link}</a></li>
+                             ))}
+                           </ul>
+                         </div>
+                        </div>
+                     )}
                     </div>
                   </div>
                 )}
