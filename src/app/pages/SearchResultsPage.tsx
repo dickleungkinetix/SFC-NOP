@@ -82,7 +82,7 @@ export default function SearchResultsPage() {
           className="absolute inset-0 w-full object-cover object-center"
         />
         {/* Search results panel */}
-                <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-6 lg:py-10">
+                <div className="relative z-10 mx-auto w-full max-w-9xl px-4 py-6 lg:py-10">
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-[#f3f4f6]">
             {/* Header - Matching Figma Container1 */}
             <div
