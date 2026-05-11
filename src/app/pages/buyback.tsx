@@ -477,21 +477,32 @@ export default function BuybackPage() {
                  </div>
 
                  {/* Filter and search section */}
-                 <div className="mb-6 bg-white p-4 rounded-lg border">
-                   <div className="flex gap-4 items-center">
-                     <label className="font-semibold">Stock code:</label>
-                     <input type="text" className="border px-3 py-2 rounded w-40" value="" />
-                     <label className="flex items-center gap-2">
-                       <input type="checkbox" />
-                       <span>Show unadjusted for splits and bonus shares</span>
-                     </label>
-                     <label className="flex items-center gap-2">
-                       <input type="checkbox" />
-                       <span>Show method</span>
-                     </label>
-                     <button className="bg-gray-400 text-white px-4 py-2 rounded">Go</button>
-                   </div>
-                 </div>
+                  <div className="mb-6 bg-white p-4 rounded-lg border">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+
+                     <div className="flex flex-col gap-1">
+                       <label className="font-semibold">Stock code:</label>
+                       <input type="text" className="border px-3 py-2 rounded w-full sm:w-40" value="" />
+                     </div>
+
+                     <div className="flex flex-col gap-2">
+
+                      <label className="flex items-center gap-2">
+                        <input type="checkbox" />
+                        <span>Show unadjusted for splits and bonus shares</span>
+                      </label>
+                      
+                      <label className="flex items-center gap-2">
+                        <input type="checkbox" />
+                        <span>Show method</span>
+                      </label>
+                      
+                     </div>
+
+                      <button className="bg-gray-400 text-white px-4 py-2 rounded self-start sm:self-auto">Go</button>
+                    
+                    </div>
+                  </div>
 
                  {/* Buybacks title */}
                  <h2 className="text-black font-bold text-base mb-2">Buybacks</h2>
