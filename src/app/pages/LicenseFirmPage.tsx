@@ -22,6 +22,7 @@ export default function LicenseFirmPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarTab, setSidebarTab] = useState<"Current" | "History">("Current");
   const [searchValue, setSearchValue] = useState("");
+  const [searchFilter, setSearchFilter] = useState("Stock Code");
 
   // Screenshot content: SFC/SEC licenses listing table.
   const firmRows = useMemo(
@@ -55,6 +56,8 @@ export default function LicenseFirmPage() {
         showSearch={true} 
         searchValue={searchValue}
         onSearchChange={setSearchValue}
+        searchFilter={searchFilter}
+        onSearchFilterChange={setSearchFilter}
       />
 
       <div className="relative flex-1">

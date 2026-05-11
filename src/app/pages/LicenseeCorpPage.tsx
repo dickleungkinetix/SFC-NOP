@@ -128,6 +128,7 @@ export default function LicenseeCorpPage() {
   const [activeTab, setActiveTab] = useState("History");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [searchFilter, setSearchFilter] = useState("Stock Code");
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -135,6 +136,8 @@ export default function LicenseeCorpPage() {
         showSearch
         searchValue={searchText}
         onSearchChange={setSearchText}
+        searchFilter={searchFilter}
+        onSearchFilterChange={setSearchFilter}
       />
 
       <div className="relative flex-1">

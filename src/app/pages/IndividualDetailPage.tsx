@@ -31,6 +31,7 @@ const otherNames = [
 export default function IndividualDetailPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [searchFilter, setSearchFilter] = useState("Stock Code");
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -38,6 +39,8 @@ export default function IndividualDetailPage() {
         showSearch
         searchValue={searchText}
         onSearchChange={setSearchText}
+        searchFilter={searchFilter}
+        onSearchFilterChange={setSearchFilter}
       />
 
       {/* Main layout with background image underneath */}

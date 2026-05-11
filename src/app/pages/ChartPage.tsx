@@ -440,9 +440,14 @@ function ShortPositionsChart() {
     return data.slice(startIndex, endIndex + 1);
   };
 
+  // Stable data: only generate once, avoid random regeneration on every zoom/range change
+  const stableChartData = useRef<any[]>([]);
+
   useEffect(() => {
-    const generated = generateChartData();
-    const filtered = filterDataByRange(generated, selectedRange);
+    if (stableChartData.current.length === 0) {
+      stableChartData.current = generateChartData();
+    }
+    const filtered = filterDataByRange(stableChartData.current, selectedRange);
     setAllChartData(filtered);
     
     // Apply zoom range to the filtered data
@@ -459,6 +464,10 @@ function ShortPositionsChart() {
     { label: "10y", value: "10y" },
     { label: "All", value: "all" },
   ];
+
+  // Track which slider is being actively dragged so we can adjust z-index
+  const activeSliderRef = useRef<'left' | 'right' | null>(null);
+  const handleSliderRelease = () => { activeSliderRef.current = null; };
 
   return (
     <div>
@@ -499,45 +508,59 @@ function ShortPositionsChart() {
               }}
             />
             
-             {/* Left slider input */}
-             <input 
-               type="range" 
-               role="presentation"
-               aria-label="Minimum"
-               tabIndex={0}
-               step="0.1"
-               min="0"
-               max="100"
-               value={zoomRange[0]}
-               onChange={(e) => {
-                 const newMin = parseFloat(e.target.value);
-                 setZoomRange([newMin, zoomRange[1]]);
-               }}
-               className="absolute w-full h-full opacity-0 cursor-pointer"
-               style={{ 
-                 pointerEvents: 'auto',
-                 zIndex: zoomRange[0] > 50 ? 4 : 5,
-               }}
-             />
+            {/* Left slider input - constrained to not exceed right handle */}
+            <input 
+              type="range" 
+              role="presentation"
+              aria-label="Minimum"
+              tabIndex={0}
+              step="0.1"
+              min="0"
+              max={zoomRange[1]}
+              value={zoomRange[0]}
+              onMouseDown={() => { activeSliderRef.current = 'left'; }}
+              onTouchStart={() => { activeSliderRef.current = 'left'; }}
+              onMouseUp={handleSliderRelease}
+              onTouchEnd={handleSliderRelease}
+              onBlur={handleSliderRelease}
+              onChange={(e) => {
+                const newMin = parseFloat(e.target.value);
+                setZoomRange([Math.min(newMin, zoomRange[1] - 0.1), zoomRange[1]]);
+              }}
+              className="absolute w-full h-full opacity-0 cursor-pointer"
+              style={{ 
+                pointerEvents: 'auto',
+                zIndex: activeSliderRef.current === 'right' ? 4 : 5,
+                width: `${zoomRange[1]}%`,
+                left: '0%',
+              }}
+            />
             
-            {/* Right slider input */}
+            {/* Right slider input - constrained to not go below left handle */}
             <input 
               type="range" 
               role="presentation"
               aria-label="Maximum"
               tabIndex={0}
               step="0.1"
-              min="0"
+              min={zoomRange[0]}
               max="100"
               value={zoomRange[1]}
+              onMouseDown={() => { activeSliderRef.current = 'right'; }}
+              onTouchStart={() => { activeSliderRef.current = 'right'; }}
+              onMouseUp={handleSliderRelease}
+              onTouchEnd={handleSliderRelease}
+              onBlur={handleSliderRelease}
               onChange={(e) => {
                 const newMax = parseFloat(e.target.value);
-                setZoomRange([zoomRange[0], newMax]);
+                setZoomRange([zoomRange[0], Math.max(newMax, zoomRange[0] + 0.1)]);
               }}
               className="absolute w-full h-full opacity-0 cursor-pointer"
               style={{ 
                 pointerEvents: 'auto',
-                zIndex: zoomRange[0] > 50 ? 5 : 4,
+                zIndex: activeSliderRef.current === 'left' ? 4 : 5,
+                width: `${100 - zoomRange[0]}%`,
+                left: `${zoomRange[0]}%`,
               }}
             />
 
@@ -598,6 +621,7 @@ export default function ChartPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [stockCode, setStockCode] = useState("");
+  const [searchFilter, setSearchFilter] = useState("Stock Code");
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -605,6 +629,8 @@ export default function ChartPage() {
         showSearch
         searchValue={searchText}
         onSearchChange={setSearchText}
+        searchFilter={searchFilter}
+        onSearchFilterChange={setSearchFilter}
       />
 
       {/* Main layout with background image underneath */}

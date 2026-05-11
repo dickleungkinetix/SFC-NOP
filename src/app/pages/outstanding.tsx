@@ -12,10 +12,11 @@ export default function OutstandingPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [stockCode, setStockCode] = useState("");
+  const [searchFilter, setSearchFilter] = useState("Stock Code");
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      <Header showSearch searchValue={searchText} onSearchChange={setSearchText} />
+      <Header showSearch searchValue={searchText} onSearchChange={setSearchText} searchFilter={searchFilter} onSearchFilterChange={setSearchFilter} />
 
       <div className="relative flex-1">
         <img

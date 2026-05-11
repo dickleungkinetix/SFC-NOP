@@ -20,6 +20,7 @@ export default function LicenseeIndividualPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarTab, setSidebarTab] = useState<"Current" | "History">("Current");
   const [searchValue, setSearchValue] = useState("");
+  const [searchFilter, setSearchFilter] = useState("Stock Code");
 
   const licenseeRows = useMemo(
     () => [
@@ -96,6 +97,8 @@ export default function LicenseeIndividualPage() {
         showSearch={true} 
         searchValue={searchValue}
         onSearchChange={setSearchValue}
+        searchFilter={searchFilter}
+        onSearchFilterChange={setSearchFilter}
       />
 
       <div className="relative flex-1">

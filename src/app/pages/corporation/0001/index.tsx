@@ -306,6 +306,7 @@ export default function Corporation0001() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [stockCode, setStockCode] = useState("");
+  const [searchFilter, setSearchFilter] = useState("Stock Code");
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -313,6 +314,8 @@ export default function Corporation0001() {
         showSearch
         searchValue={searchText}
         onSearchChange={setSearchText}
+        searchFilter={searchFilter}
+        onSearchFilterChange={setSearchFilter}
       />
 
       {/* Main layout with background image underneath */}

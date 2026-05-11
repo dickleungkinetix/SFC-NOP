@@ -145,19 +145,13 @@ export function Header({
 
         {/* Mobile: search filter row (search results page) */}
         {showSearch && (
-          <div className="lg:hidden flex items-center gap-3 px-4 pb-2.5 overflow-x-auto relative z-50">
+          <div className="lg:hidden flex items-center gap-3 px-4 pb-2.5 overflow-x-visible relative z-50">
             {["Stock Code", "Individuals", "Corporations", "Licensee"].map((opt) => (
               <label 
                 key={opt} 
                 className="flex items-center gap-1.5 cursor-pointer shrink-0 relative z-50"
+                onClick={() => onSearchFilterChange && onSearchFilterChange(opt)}
               >
-                <input 
-                  type="radio" 
-                  name="mobile-search-filter" 
-                  className="hidden" 
-                  checked={searchFilter === opt}
-                  onChange={() => onSearchFilterChange && onSearchFilterChange(opt)}
-                />
                 <div
                   className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors ${
                     searchFilter === opt ? "border-[#008581]" : "border-gray-400"
