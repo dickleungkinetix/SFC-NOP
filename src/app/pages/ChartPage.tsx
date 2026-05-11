@@ -600,7 +600,11 @@ function ShortPositionsChart() {
         {rangeButtons.map((btn) => (
           <button
             key={btn.value}
-            onClick={() => setSelectedRange(btn.value)}
+            onClick={() => {
+              // Reset zoom range to show full data for the selected period
+              setZoomRange([0, 100]);
+              setSelectedRange(btn.value);
+            }}
             className={`px-4 py-2 text-sm font-semibold rounded transition-colors ${
               selectedRange === btn.value
                 ? "bg-[#009ca6] text-white"
