@@ -192,7 +192,7 @@ export function Header({
                 {/* Mega Menu - Click-based accordion with smooth animation */}
                 {openNavItem === item.label && (
                   <div 
-                    className="absolute top-full left-1/2 -translate-x-1/2 w-[calc(100vw-40px)] lg:w-[1100px] max-w-7xl bg-white shadow-2xl border-t-2 z-50 animate-in fade-in slide-in-from-top-2 duration-300"
+                    className="absolute top-full left-1/2 -translate-x-1/2 w-[calc(100vw-40px)] lg:w-[1100px] max-w-9xl bg-white shadow-2xl border-t-2 z-50 animate-in fade-in slide-in-from-top-2 duration-300"
                     style={{ borderTopColor: item.color }}
                   >
                     <div className="p-8">

@@ -80,7 +80,7 @@ export default function FaqPage() {
           />
           <div className="absolute inset-x-0 top-0 h-[444px] bg-gradient-to-b from-blue-800/30 to-gray-800/30" />
 
-          <section className="relative max-w-7xl mx-auto w-full px-2 sm:px-4 lg:px-6 py-4 lg:py-6">
+          <section className="relative max-w-9xl mx-auto w-full px-2 sm:px-4 lg:px-6 py-4 lg:py-6">
             <div className="bg-white rounded-xl shadow-sm p-4 lg:p-6">
             <div className="mb-3">
               <span

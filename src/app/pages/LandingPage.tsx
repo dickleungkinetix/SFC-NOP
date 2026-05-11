@@ -166,16 +166,26 @@ function IconCorporations() {
 function IconIndividuals() {
   return (
     <svg width="44" height="50" viewBox="0 0 68.1625 76.3" fill="none">
-      <path d={svgPaths.p232f9600} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d={svgPaths.pda42c80} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d={svgPaths.p6296d80} stroke="#00A651" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d={svgPaths.p22f00f80} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d={svgPaths.p1cbfb300} fill="#00A651" stroke="#00A651" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d={svgPaths.p34938cc0} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d="M23.1875 22.8375H44.975" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d="M23.1875 32.025H52.2375" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d="M23.1875 41.2125H37.7125" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
-      <path d="M23.1875 50.4H34.0812" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.8" />
+      {/* Certificate document body - white outline */}
+      <path d="M16.3 7.5H52c1.9 0 3.8.7 5.1 1.8 1.4 1.1 2.1 2.7 2.1 4.3v42.9c0 1.6-.7 3.2-2.1 4.3-1.3 1.1-3.2 1.8-5.1 1.8H16.3c-1.9 0-3.8-.7-5.1-1.8-1.4-1.1-2.1-2.7-2.1-4.3V13.6c0-1.6.7-3.2 2.1-4.3 1.3-1.1 3.2-1.8 5.1-1.8z" stroke="white" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Side tab */}
+      <path d="M8.7 13.6H1.4V7.5c0-1.6.8-3.2 2.1-4.3C4.9 2.1 6.7 1.4 8.7 1.4h7.6" stroke="white" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Green ribbon seal band across certificate */}
+      <path d="M1.4 35.1h9.5" stroke="#00A651" strokeWidth="2.8" strokeLinecap="round"/>
+      <path d="M1.4 44.3h9.5" stroke="#00A651" strokeWidth="2.8" strokeLinecap="round"/>
+      <path d="M1.4 53.5h9.5" stroke="#00A651" strokeWidth="2.8" strokeLinecap="round"/>
+      {/* Green bottom bar (matches IconCorporations style) */}
+      <path d="M52.2 74.9h10.9" stroke="#00A651" strokeWidth="2.8" strokeLinecap="round"/>
+      {/* Circular seal with green fill center (matches IconCCASS style) */}
+      <path d="M56 53.5c5.9 0 10.7-4.1 10.7-9.2s-4.8-9.2-10.7-9.2S45.3 39 45.3 44.3s4.8 9.2 10.7 9.2z" stroke="white" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="56" cy="44.3" r="3.5" fill="#00A651" stroke="#00A651" strokeWidth="2.8"/>
+      {/* Medal ribbon at bottom */}
+      <path d="M48.6 51.7L45 68.1l10.9-3.3 10.9 3.3-3.6-16.4" stroke="white" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Document text entry lines */}
+      <path d="M23.2 22.8h21.8" stroke="white" strokeWidth="2.8" strokeLinecap="round"/>
+      <path d="M23.2 32h29.1" stroke="white" strokeWidth="2.8" strokeLinecap="round"/>
+      <path d="M23.2 41.2h14.5" stroke="white" strokeWidth="2.8" strokeLinecap="round"/>
+      <path d="M23.2 50.4h10.9" stroke="white" strokeWidth="2.8" strokeLinecap="round"/>
     </svg>
   );
 }

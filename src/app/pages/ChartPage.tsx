@@ -643,7 +643,7 @@ export default function ChartPage() {
         />
         <div className="absolute inset-x-0 top-0 h-[444px] bg-gradient-to-b from-blue-800/30 to-gray-800/30" />
 
-        <div className="relative max-w-7xl mx-auto w-full px-2 sm:px-4 lg:px-6 py-4 lg:py-6">
+        <div className="relative max-w-9xl mx-auto w-full px-2 sm:px-4 lg:px-6 py-4 lg:py-6">
           <div className="flex gap-4 lg:gap-6 relative">
 
             {/* Desktop Sidebar */}
