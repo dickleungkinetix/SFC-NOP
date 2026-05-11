@@ -184,14 +184,26 @@ export default function CCASS() {
 
                 {/* Top Navigation Tabs */}
                 <div className="mb-6 overflow-x-auto">
-                  <div className="flex gap-2 bg-gray-100 p-2 rounded-lg w-fit min-w-full">
-                    <button className="px-4 py-1.5 bg-[#128c88] text-white text-xs font-semibold rounded hover:bg-[#0a7472] transition-colors">Holdings</button>
-                    <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Changes</button>
-                    <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Big changes</button>
-                    <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Concentration</button>
-                    <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Big changes all stocks</button>
-                    <button className="px-4 py-1.5 bg-gray-400 text-white text-xs font-semibold rounded hover:bg-gray-500 transition-colors">Participants</button>
-                  </div>
+                  <ul className="flex flex-wrap text-sm font-medium text-center text-gray-600 border-b border-gray-200 min-w-max">
+                    <li className="me-2">
+                      <a href="#" aria-current="page" className="inline-block p-3 bg-[#128c88] rounded-t-lg text-white">Holdings</a>
+                    </li>
+                    <li className="me-2">
+                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Changes</a>
+                    </li>
+                    <li className="me-2">
+                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Big changes</a>
+                    </li>
+                    <li className="me-2">
+                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Concentration</a>
+                    </li>
+                    <li className="me-2">
+                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Big changes all stocks</a>
+                    </li>
+                    <li className="me-2">
+                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Participants</a>
+                    </li>
+                  </ul>
                 </div>
 
                 {/* Radio Button Selection - View Options */}
