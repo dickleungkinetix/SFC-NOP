@@ -110,7 +110,7 @@ export default function FaqPage() {
               Note: for FAQ on SFC Reports, click here.
             </p>
 
-            <div className="max-w-6xl mx-auto w-full py-3 lg:py-5">
+            <div className="max-w-9xl mx-auto w-full py-3 lg:py-5">
               <div className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-12">
                 <div className="flex-1 min-w-0">
                   <div className="border-b border-gray-200">
