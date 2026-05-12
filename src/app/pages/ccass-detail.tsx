@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import imgHero from "../../assets/4095f7088a770ad2fc6a4abd1dbaf4eb80413283.png";
 
 // ──────────────── MAIN PAGE ────────────────
 
+const tabs = ["Holdings", "Changes", "Big changes", "Concentration", "Big changes all stocks", "Participants"];
+
 export default function CCASS() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [searchFilter, setSearchFilter] = useState("Stock Code");
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -185,30 +189,41 @@ export default function CCASS() {
                   </p>
                 </div>
 
-                {/* Top Navigation Tabs */}
-                <div className="mb-6 overflow-x-auto">
-                  <ul className="flex flex-wrap text-sm font-medium text-center text-gray-600 border-b border-gray-200 min-w-max">
-                    <li className="me-2">
-                      <a href="#" aria-current="page" className="inline-block p-3 bg-[#128c88] rounded-t-lg text-white">Holdings</a>
-                    </li>
-                    <li className="me-2">
-                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Changes</a>
-                    </li>
-                    <li className="me-2">
-                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Big changes</a>
-                    </li>
-                    <li className="me-2">
-                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Concentration</a>
-                    </li>
-                    <li className="me-2">
-                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Big changes all stocks</a>
-                    </li>
-                    <li className="me-2">
-                      <a href="#" className="inline-block p-3 rounded-t-lg hover:text-gray-900 hover:bg-gray-100">Participants</a>
-                    </li>
-                  </ul>
+                {/* Animated Tabs */}
+                <div className="relative mb-6">
+                  <div className="flex text-sm font-medium border-b border-gray-200">
+                    {tabs.map((tab, i) => (
+                      <button
+                        key={tab}
+                        onClick={() => setActiveTab(i)}
+                        className={`relative px-4 py-3 text-sm whitespace-nowrap transition-colors ${
+                          activeTab === i
+                            ? "text-white"
+                            : "text-gray-600 hover:text-gray-900"
+                        }`}
+                      >
+                        {activeTab === i && (
+                          <motion.div
+                            layoutId="active-tab"
+                            className="absolute inset-0 bg-[#128c88] rounded-t-lg"
+                            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                          />
+                        )}
+                        <span className="relative z-10">{tab}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
+                {/* Animated Tab Content */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2 }}
+                  >
                 {/* Radio Button Selection - View Options */}
                 <div className="mb-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
                   <div className="flex flex-wrap gap-6">
@@ -368,6 +383,8 @@ export default function CCASS() {
                     </table>
                   </div>
                 </div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
           </div>

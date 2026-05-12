@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useNavigate } from "react-router";
+import { motion } from "motion/react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import svgPaths from "../../imports/svg-eeujv9dou2";
@@ -9,6 +10,28 @@ import imgHero2 from "figma:asset/4095f7088a770ad2fc6a4abd1dbaf4eb80413283.png";
 
 const heroImages = [imgHero1, imgHero2];
 const SLIDE_INTERVAL = 5000;
+
+// ──────────────── STAGGER ANIMATION VARIANTS ────────────────
+
+const staggerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 // ──────────────── HERO CAROUSEL ────────────────
 
@@ -351,9 +374,16 @@ export default function LandingPage() {
       <HeroCarousel />
 
       {/* Hero content */}
-      <div className="relative z-10 -mt-[444px] flex flex-col items-center px-4 pt-8 pb-28 sm:pb-32 lg:pt-12 lg:pb-36" style={{ minHeight: "444px" }}>
+      <motion.div
+        className="relative z-10 -mt-[444px] flex flex-col items-center px-4 pt-8 pb-28 sm:pb-32 lg:pt-12 lg:pb-36"
+        style={{ minHeight: "444px" }}
+        variants={staggerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {/* Title */}
-        <h1
+        <motion.h1
+          variants={fadeUpVariants}
           className="text-white text-center mb-5 lg:mb-7 px-2 max-w-3xl"
           style={{
             fontFamily: "Arial, sans-serif",
@@ -364,7 +394,7 @@ export default function LandingPage() {
           }}
         >
           Hong Kong Listed Companies, New Online Platform
-        </h1>
+        </motion.h1>
 
         {/* Search bar */}
         <div
@@ -408,13 +438,18 @@ export default function LandingPage() {
               label={opt}
               selected={searchFilter === opt}
               onSelect={() => setSearchFilter(opt)}
-            />
+            />  
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* ── Category Cards — float up over hero ── */}
-      <div className="relative z-10 -mt-20 sm:-mt-24 lg:-mt-24 px-3 sm:px-4 lg:px-8 max-w-6xl mx-auto w-full">
+      <motion.div
+        className="relative z-10 -mt-20 sm:-mt-24 lg:-mt-24 px-3 sm:px-4 lg:px-8 max-w-6xl mx-auto w-full"
+        variants={staggerVariants}
+        initial="hidden"
+        animate="visible"
+      >
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-3">
           {cards.map((card) => (
             <a
@@ -494,7 +529,7 @@ export default function LandingPage() {
             </a>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* ── FAQ Section ── */}
       <div className="max-w-6xl mx-auto w-full px-4 lg:px-8 py-10 lg:py-14">
